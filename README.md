@@ -2,7 +2,7 @@
 
 Our Project 2 assignment is designing and building our first full-stack web application.
 
-THe theme is a weather dashboard to forecast weather conditions, and a stock quote dashboard for current stock prices. 
+The theme is a weather dashboard to forecast weather conditions, and a stock quote dashboard for current stock prices. 
 
 Our team has designed and built an app using the MVC paradigm and a server-side API. 
 
