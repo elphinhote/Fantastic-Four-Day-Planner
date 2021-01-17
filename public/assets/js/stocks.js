@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let price = document.querySelector(".price");
         //  Api request URL for AlphaVantage (currently just searching for IBM) 
         const requestUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${search}&apikey=T4FCSEMRY1YDLIH0`;
+
         // fetch Request to get the information
         fetch(requestUrl, {
 
@@ -41,9 +42,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 console.log(data["Global Quote"]["01. symbol"])
                 console.log(data["Global Quote"]["05. price"])
 
+                let stockSymbol = data["Global Quote"]["01. symbol"]
+                let stockPrice = data["Global Quote"]["05. price"]
+
                 // Display the search to the page
-                company.innerHTML = data["Global Quote"]["01. symbol"]
-                price.textContent = data["Global Quote"]["05. price"]
+                company.innerHTML = (`Stock Symbol: ${stockSymbol}`)
+                price.textContent = (`Price: $${stockPrice}`)
 
             })
 
