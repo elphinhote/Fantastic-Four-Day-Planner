@@ -4,14 +4,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Let user know that everything loaded correctly
         console.info("DOM content Loaded");
     }
+    // Consts for the search input and search button
+    const searchInput = document.querySelector(".searchInput")
+    const searchBtn = document.querySelector(".searchBtn")
 
-
-    function stockSearch() {
+    // Event listener for the stock search button
+    searchBtn.addEventListener("click", (e) => {
+        // prevent that default behavior
+        e.preventDefault();
+        // console.logs to see if the button is clicked, and what the search is for.
+        console.log("clicked")
+        // Variable for the search
+        let search = searchInput.value
+        console.log(search)
         // set variables to grab the HTML classes so we can display the stock name and price
         let company = document.querySelector(".company");
         let price = document.querySelector(".price");
-        // Api request URL for AlphaVantage (currently just searching for IBM) 
-        const requestUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo`;
+        //  Api request URL for AlphaVantage (currently just searching for IBM) 
+        const requestUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${search}&apikey=T4FCSEMRY1YDLIH0`;
         // fetch Request to get the information
         fetch(requestUrl, {
 
@@ -30,12 +40,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 console.log(data)
                 console.log(data["Global Quote"]["01. symbol"])
                 console.log(data["Global Quote"]["05. price"])
+
+                // Display the search to the page
                 company.innerHTML = data["Global Quote"]["01. symbol"]
                 price.textContent = data["Global Quote"]["05. price"]
 
             })
-    }
-    stockSearch()
 
+
+    })
 
 })
