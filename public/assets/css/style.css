@@ -31,3 +31,11 @@
     color: white;
     text-align: center;
 }
+
+.past-searches li{
+list-style: none;
+display: inline;
+background-color: black;
+color: white;
+padding: 5px;
+}

@@ -53,6 +53,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 company.innerHTML = (`Stock Symbol: ${stockSymbol}`)
                 price.textContent = (`Price: $${stockPrice}`)
 
+                // Set the past searches to a li on the left side of the page
+                let searchTitle = document.createElement("li");
+
+                searchTitle.innerHTML = stockSymbol;
+                // append
+                document.querySelector(".past-searches").appendChild(searchTitle)
+
             })
 
 

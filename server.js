@@ -12,10 +12,10 @@ if (dotenv.error) {
 // Set the .env data as a varible
 const APIKEY = dotenv.parsed.APIKEY
 // console log the API key
-console.log(APIKEY)
+// console.log(APIKEY)
 
 
-var app = express();
+// var app = express();
 
 var PORT = process.env.PORT || 3000;
 
@@ -40,10 +40,10 @@ db.sequelize.sync({ force: true }).then(() => {
 });
 
 // Start the server and let user know where it's listening
-app.listen(PORT, function () {
-    // Log (server-side) when our server has started
-    console.log(`Listening on: http://localhost:${PORT}`);
-});
+// app.listen(PORT, function () {
+//     // Log (server-side) when our server has started
+//     console.log(`Listening on: http://localhost:${PORT}`);
+// });
 
 
 // app.listen(PORT, function () {
