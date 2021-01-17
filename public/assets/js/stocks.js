@@ -7,9 +7,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
     function stockSearch() {
+        // set variables to grab the HTML classes so we can display the stock name and price
         let company = document.querySelector(".company");
         let price = document.querySelector(".price");
+        // Api request URL for AlphaVantage (currently just searching for IBM) 
         const requestUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo`;
+        // fetch Request to get the information
         fetch(requestUrl, {
 
             method: "GET",
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             })
             // create an object for the data
             .then(function (data) {
+                // console log the data object
                 console.log(data)
                 console.log(data["Global Quote"]["01. symbol"])
                 console.log(data["Global Quote"]["05. price"])

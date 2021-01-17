@@ -1,0 +1,33 @@
+*{
+    padding: 0px;
+    margin:0px
+}
+.home{
+    height:40px;
+}
+#card1{
+    position: relative;
+    padding-left: 520px;
+}
+#space1{
+    width: 260px;
+}
+#container1{
+    display: flex;
+    flex-direction: column;
+    align-content:stretch;
+}
+.table {
+    width: 30%;
+    margin-left: 6px;
+    border:0px;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:lightblue;
+    color: white;
+    text-align: center;
+}
