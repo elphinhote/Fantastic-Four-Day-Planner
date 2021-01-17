@@ -1,3 +1,5 @@
+// let dotenv = require('dotenv').config()
+
 // Event to let the user know that the DOM content Loaded
 document.addEventListener('DOMContentLoaded', (event) => {
     if (event) {
@@ -20,6 +22,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // set variables to grab the HTML classes so we can display the stock name and price
         let company = document.querySelector(".company");
         let price = document.querySelector(".price");
+        // console.log(dotenv.parsed.APIKEY)
+        // let myAPI = process.env.APIKEY
         //  Api request URL for AlphaVantage (currently just searching for IBM) 
         const requestUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${search}&apikey=T4FCSEMRY1YDLIH0`;
 

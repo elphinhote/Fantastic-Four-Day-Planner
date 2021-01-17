@@ -1,6 +1,19 @@
-var express = require("express");
+const express = require("express");
 // var bodyParser = require("body parser")
 // var expressHandlebars = require("express-handlebars");
+const app = express();
+
+// dotenv const to hide API key
+const dotenv = require('dotenv').config()
+// Check for errors
+if (dotenv.error) {
+    throw dotenv.error
+}
+// Set the .env data as a varible
+const APIKEY = dotenv.parsed.APIKEY
+// console log the API key
+console.log(APIKEY)
+
 
 var app = express();
 
