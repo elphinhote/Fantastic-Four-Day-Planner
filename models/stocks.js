@@ -4,12 +4,12 @@ module.exports = (sequelize, DataTypes) => {
         // validate as letters, and length is between 1 and 5 characters
         stock: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 isAlpha: true,
                 len: [1, 5],
-            }
-        }
+            },
+        },
     });
 
     // return the stocks

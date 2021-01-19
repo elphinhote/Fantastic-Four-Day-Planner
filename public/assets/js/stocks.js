@@ -1,5 +1,3 @@
-// let dotenv = require('dotenv').config()
-
 // Event to let the user know that the DOM content Loaded
 document.addEventListener('DOMContentLoaded', (event) => {
     if (event) {
@@ -22,45 +20,78 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // set variables to grab the HTML classes so we can display the stock name and price
         let company = document.querySelector(".company");
         let price = document.querySelector(".price");
+
+        const newStock = {
+            stock: search,
+        }
+        console.log(newStock)
+
+        // const newStock = (search) => {
+        fetch('/api/new', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newStock),
+        })
+            .then((newStock) => newStock.json())
+            .then((data) => {
+                console.log('Success in adding stock:', data);
+                console.log(`Stock added: ${newStock.stock}`);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        // };
+
+
+
+
+
+
+
         // console.log(dotenv.parsed.APIKEY)
         // let myAPI = process.env.APIKEY
         //  Api request URL for AlphaVantage (currently just searching for IBM) 
-        const requestUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${search}&apikey=T4FCSEMRY1YDLIH0`;
+        // const requestUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${search}&apikey=T4FCSEMRY1YDLIH0`;
 
-        // fetch Request to get the information
-        fetch(requestUrl, {
 
-            method: "GET",
-            credentials: "same-origin",
-            redirect: "follow",
-            cache: "reload",
-        })
-            // return to json format
-            .then(function (response) {
-                return response.json();
-            })
-            // create an object for the data
-            .then(function (data) {
-                // console log the data object
-                console.log(data)
-                console.log(data["Global Quote"]["01. symbol"])
-                console.log(data["Global Quote"]["05. price"])
 
-                let stockSymbol = data["Global Quote"]["01. symbol"]
-                let stockPrice = data["Global Quote"]["05. price"]
 
-                // Display the search to the page
-                company.innerHTML = (`Stock Symbol: ${stockSymbol}`)
-                price.textContent = (`Price: $${stockPrice}`)
+        // // fetch Request to get the information
+        // fetch(requestUrl, {
 
-                // Set the past searches to a li on the left side of the page
-                let searchTitle = document.createElement("li");
+        //     method: "GET",
+        //     credentials: "same-origin",
+        //     redirect: "follow",
+        //     cache: "reload",
+        // })
+        //     // return to json format
+        //     .then(function (response) {
+        //         return response.json();
+        //     })
+        //     // create an object for the data
+        //     .then(function (data) {
+        //         // console log the data object
+        //         console.log(data)
+        //         console.log(data["Global Quote"]["01. symbol"])
+        //         console.log(data["Global Quote"]["05. price"])
 
-                searchTitle.innerHTML = stockSymbol;
-                // append
-                document.querySelector(".past-searches").appendChild(searchTitle)
+        //         let stockSymbol = data["Global Quote"]["01. symbol"]
+        //         let stockPrice = data["Global Quote"]["05. price"]
 
-            })
+        //         // Display the search to the page
+        //         company.innerHTML = (`Stock Symbol: ${stockSymbol}`)
+        //         price.textContent = (`Price: $${stockPrice}`)
+
+        //         // Set the past searches to a li on the left side of the page
+        //         let searchTitle = document.createElement("li");
+
+        //         searchTitle.innerHTML = stockSymbol;
+        //         // append
+        //         document.querySelector(".past-searches").appendChild(searchTitle)
+
+        //     })
 
 
     })
