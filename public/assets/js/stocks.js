@@ -16,17 +16,47 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log("clicked")
         // Variable for the search
         let search = searchInput.value
+        // Console log the searched Stock Ticker
         console.log(search)
-        // set variables to grab the HTML classes so we can display the stock name and price
-        let company = document.querySelector(".company");
-        let price = document.querySelector(".price");
 
+
+        // Fetch Request to get all of the past searched stocks from the database
+        fetch('/api/all', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            // Json that response
+        }).then((response) => response.json())
+            // Console log the data to let user know it worked
+            .then((data) => {
+                console.log('Success in getting all stocks', data);
+                // For each loop to go through the searches and print them to the page
+                data.forEach(({ stock }) => {
+                    // Set the past searches to a li on the left side of the page
+                    const pastSearches = document.querySelector(".past-searches")
+                    // Create the list
+                    let searchTitle = document.createElement("li");
+                    // Append the list
+                    pastSearches.appendChild(searchTitle)
+                    // Put the values on the screen
+                    searchTitle.textContent = stock
+
+                })
+            })
+            // Catching them errors
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+        // Const for saving a newly searched stock to the database
         const newStock = {
             stock: search,
         }
+        // Console log it
         console.log(newStock)
 
-        // const newStock = (search) => {
+        // Fetch request to post the newly searched stock to the database
         fetch('/api/new', {
             method: 'POST',
             headers: {
@@ -34,15 +64,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
             },
             body: JSON.stringify(newStock),
         })
+            // Json the data
             .then((newStock) => newStock.json())
+            // Console log to let user know it was successful!
             .then((data) => {
                 console.log('Success in adding stock:', data);
                 console.log(`Stock added: ${newStock.stock}`);
             })
+            // Catching all them errors!
             .catch((error) => {
                 console.error('Error:', error);
             });
-        // };
+
 
 
 
