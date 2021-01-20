@@ -40,3 +40,20 @@
     color: white;
     padding: 5px;
 }
+#cardw{
+    height: 300px;
+    width:40%;
+    
+}
+#weather{
+    padding: 0px;
+    position: relative;
+    padding-top: 15px;
+    padding-right: 13px;
+    padding-bottom: 15px;
+    padding-left: 18px;
+}
+#search{
+    text-align: center;
+    margin:10px 20px;
+}
