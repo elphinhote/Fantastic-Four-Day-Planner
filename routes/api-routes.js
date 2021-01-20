@@ -2,6 +2,9 @@ const { QueryTypes, EmptyResultError } = require('sequelize');
 const db = require('../models');
 const Stock = require('../models/stocks.js');
 const axios = require("axios")
+// const moment = require("moment")
+
+// console.log(moment().format("MMM Do YY"))
 
 // dotenv const to hide API key
 const dotenv = require('dotenv').config()
