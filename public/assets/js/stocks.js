@@ -8,24 +8,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const searchInput = document.querySelector(".searchInput")
     const searchBtn = document.querySelector(".searchBtn")
     let button = document.querySelector('#submit')
-    let inputVal=document.querySelector('.inputValue')
-    let namel=document.querySelector('.name')
-    let dis=document.querySelector('.desc')
-    let temp=document.querySelector('.temp')
-    button.addEventListener('click',function(){
-        fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputVal.value+'&appid=a818b4cc3056dff4bd880c03672ec7ed')
-    .then(response=>response.json())
-    .then(data=>{
-        console.log("clicked")
-        console.log(data)
-        var nameValue=data['name']
-        namel.textContent=('Location: ')+nameValue;
-        var tempvalue =data['main']['temp'];
-        temp.innerHTML=('Temperature: ')+[Math.floor((tempvalue-273.15)*1.8)+20]+(" °F");
-        var disval=data['weather'][0]['description'];
-        dis.textContent=('Seems like: ')+disval; 
-    })
-    .catch(err=>console.log(err))
+    let inputVal = document.querySelector('.inputValue')
+    let namel = document.querySelector('.name')
+    let dis = document.querySelector('.desc')
+    let temp = document.querySelector('.temp')
+    button.addEventListener('click', function () {
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputVal.value + '&appid=a818b4cc3056dff4bd880c03672ec7ed')
+            .then(response => response.json())
+            .then(data => {
+                console.log("clicked")
+                console.log(data)
+                var nameValue = data['name']
+                namel.textContent = ('Location: ') + nameValue;
+                var tempvalue = data['main']['temp'];
+                temp.innerHTML = ('Temperature: ') + [Math.floor((tempvalue - 273.15) * 1.8) + 20] + (" °F");
+                var disval = data['weather'][0]['description'];
+                dis.textContent = ('Seems like: ') + disval;
+            })
+            .catch(err => console.log(err))
     })
 
     // Event listener for the stock search button
@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     const pastSearches = document.querySelector(".past-searches")
                     // Create the list
                     let searchTitle = document.createElement("li");
+                    searchTitle.classList.add("searched")
 
                     let deleteButton = document.createElement("button");
                     deleteButton.classList.add("delete-stock")
@@ -84,7 +85,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
                             headers: {
                                 'Content-Type': 'application/json',
                             },
-                        }).then(console.log("Deleted"));
+                        }).then(
+
+                            searchTitle.textContent = ""
+
+                            // console.log("Deleted")
+
+                        );
 
 
 
@@ -115,10 +122,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
                     // Append the list
-                    pastSearches.append(searchTitle, deleteButton)
-                    // searchTitle.append(searchButton)
-                    // Put the values on the screen
-                    searchTitle.textContent = stock
+                    // pastSearches.append(searchTitle, deleteButton)
+                    // // searchTitle.append(searchButton)
+                    // // Put the values on the screen
+                    // searchTitle.textContent = stock
 
                 })
             })
@@ -191,11 +198,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             })
 
+        const newsSearchButton = document.querySelector(".news-button")
+        newsSearchButton.addEventListener("click", (e) => {
+            // prevent that default behavior
+            e.preventDefault();
+            fetch("/api/newsSearch", {
+                method: "PUT",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(search),
+            })
+                .then((results) => results.json())
+                // Console log to let user know it was successful!
+                .then((data) => {
+                    console.log(data)
+                })
+
+        })
+
+
+        // API KET FOR NEWS 73a4ea5fd9c54d2c9fb5628642ce8864
     })
-
-
-
-
 
 
 })

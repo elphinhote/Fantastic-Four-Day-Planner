@@ -33,7 +33,7 @@ module.exports = (app) => {
 
     app.put('/api/stockSearch', async (req, res) => {
         const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${req.body.stock}&apikey=${apiKey}`;
-        const stock = await axios.get(url);
+        // const stock = await axios.get(url);
         // const data = stock.data
         // console.log(stock.data)
         // res.json(stock.data)
@@ -46,6 +46,20 @@ module.exports = (app) => {
             res.status(500).send('Server Error - Whoops');
         }
     });
+
+    app.put("/api/newsSearch", async (req, res) => {
+        const newsUrl = "a818b4cc3056dff4bd880c03672ec7ed"
+            `http://newsapi.org/v2/everything?q=${newsSearch}&&sortBy=popularity&apiKey=${newsApiKey}`;
+        // const news = await axios.get(url);
+
+        try {
+            const news = await axios.get(url);
+            res.json(news.data);
+        } catch (error) {
+            console.log(err.message);
+            res.status(500).send("news Api Whoops");
+        }
+    })
 
     app.delete("/api/all/:id", (req, res) => {
         db.Stocks.destroy({
