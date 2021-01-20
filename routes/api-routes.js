@@ -47,6 +47,14 @@ module.exports = (app) => {
         }
     });
 
+    app.delete("/api/all/:id", (req, res) => {
+        db.Stocks.destroy({
+            where: {
+                id: req.params.id,
+            },
+        }).then((dbStocks) => res.json(dbStocks));
+    });
+
 
 
 };

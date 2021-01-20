@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // prevent that default behavior
         e.preventDefault();
         // console.logs to see if the button is clicked, and what the search is for.
-        console.log("clicked")
+        // console.log("clicked")
         // Variable for the search
         let search = searchInput.value
         // Console log the searched Stock Ticker
-        console.log(search)
+        // console.log(search)
 
 
         // Fetch Request to get all of the past searched stocks from the database
@@ -30,24 +30,75 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }).then((response) => response.json())
             // Console log the data to let user know it worked
             .then((data) => {
-                console.log('Success in getting all stocks', data);
+                // console.log('Success in getting all stocks', data);
                 // For each loop to go through the searches and print them to the page
-                data.forEach(({ stock }) => {
+                // console.log(data)
+                // let stockList = data
+                // console.log(stockList)
+                // stockList.forEach(({ id, stock }) => {
+                //     console.log(id)
+                //     console.log(stock)
+                // })
+
+
+
+                data.forEach(({ id, stock }) => {
+                    console.log(stock)
                     // Set the past searches to a li on the left side of the page
                     const pastSearches = document.querySelector(".past-searches")
                     // Create the list
                     let searchTitle = document.createElement("li");
-                    searchTitle.classList.add("searches")
+
+                    let deleteButton = document.createElement("button");
+                    deleteButton.classList.add("delete-stock")
+
+                    let stockId = deleteButton.setAttribute("id", id)
+                    deleteButton.innerHTML = "delete"
+                    deleteButton.addEventListener("click", (e) => {
+                        console.log("clicked")
+                        stockId = e.target.getAttribute("id")
+                        console.log(stockId)
+
+                        fetch(`/api/all/${stockId}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                        }).then(console.log("Deleted"));
+
+
+
+
+                    }
+                    )
                     // Append the list
-                    pastSearches.appendChild(searchTitle)
+                    pastSearches.append(searchTitle, deleteButton)
+                    // searchTitle.append(searchButton)
                     // Put the values on the screen
                     searchTitle.textContent = stock
 
+                    // Search Again Button Test
+                    // let searchAgainButton = document.createElement("button");
+                    // searchAgainButton.innerHTML = "search Again"
+                    // searchAgainButton.classList.add("search-again-button")
 
-                    let searches = document.querySelector(".searches")
-                    let stockButton = document.createElement("button")
-                    stockButton.appendChild(searches)
+                    // const deleteBtn = document.querySelectorAll(".delete-button")
+                    // deleteBtn.forEach((button) => {
+                    //     button.addEventListener("click", (e) => {
+                    //         // prevent that default behavior
 
+                    //         console.log("clicked")
+                    //     })
+                    // })
+
+
+
+
+                    // Append the list
+                    pastSearches.append(searchTitle, deleteButton)
+                    // searchTitle.append(searchButton)
+                    // Put the values on the screen
+                    searchTitle.textContent = stock
 
                 })
             })
@@ -56,12 +107,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 console.error('Error:', error);
             });
 
+        // const deleteStock = document.querySelectorAll(".delete-stock")
+        // deleteStock.forEach((button) => {
+        //     button.addEventListener("click", (e) => {
+
+        //         console.log("clicked")
+        //     })
+        // })
+
         // Const for saving a newly searched stock to the database
         const newStock = {
             stock: search,
         }
         // Console log it
-        console.log(newStock)
+        // console.log(newStock)
 
         // Fetch request to post the newly searched stock to the database
         fetch('/api/new', {
@@ -83,8 +142,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 console.error('Error:', error);
             });
 
-        console.log(newStock)
-
 
         // Fetch Request searching stocks
         fetch("/api/stockSearch", {
@@ -98,68 +155,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // Console log to let user know it was successful!
             .then((data) => {
                 // console log the data object
-                console.log(data)
+                // console.log(data)
 
+                // Set Variable for the stock symbol
                 let stockSymbol = data["Global Quote"]["01. symbol"]
+                // Set Variable for the stock price
                 let stockPrice = data["Global Quote"]["05. price"]
 
+                // Query selector the classes
                 let company = document.querySelector(".company")
                 let price = document.querySelector(".price")
                 // Display the search to the page
                 company.innerHTML = (`Stock Symbol: ${stockSymbol}`)
                 price.textContent = (`Price: $${stockPrice}`)
 
-
             })
 
-
-
-
-        // // dotenv const to hide API key
-        // const dotenv = require('dotenv').config()
-        // // Check for errors
-        // if (dotenv.error) {
-        //     throw dotenv.error
-        // }
-        // // Set the .env data as a varible
-        // const apiKey = dotenv.parsed.apiKey
-        // // console log the API key
-        // console.log(apiKey)
-
-        //  Api request URL for AlphaVantage (currently just searching for IBM) 
-        // const requestUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${search}&apikey=T4FCSEMRY1YDLIH0`;
-
-        // // fetch Request to get the information
-        // fetch(requestUrl, {
-
-        //     method: "GET",
-        //     credentials: "same-origin",
-        //     redirect: "follow",
-        //     cache: "reload",
-        // })
-        //     // return to json format
-        //     .then(function (response) {
-        //         return response.json();
-        //     })
-        //     // create an object for the data
-        //     .then(function (data) {
-        //         // console log the data object
-        //         console.log(data)
-        //         console.log(data["Global Quote"]["01. symbol"])
-        //         console.log(data["Global Quote"]["05. price"])
-
-        //         let stockSymbol = data["Global Quote"]["01. symbol"]
-        //         let stockPrice = data["Global Quote"]["05. price"]
-
-        //         let company = document.querySelector(".company")
-        //         let price = document.querySelector(".price")
-        //         // Display the search to the page
-        //         company.innerHTML = (`Stock Symbol: ${stockSymbol}`)
-        //         price.textContent = (`Price: $${stockPrice}`)
-
-        //     })
-
-
     })
+
+
+
+
+
 
 })
