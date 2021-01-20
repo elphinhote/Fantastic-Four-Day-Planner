@@ -14,7 +14,7 @@ if (process.env.JAWSDB_URL) {
         // my username
         user: 'root',
         // my super secret password
-        password: 'password',
+        password: 'Lovenepal1@',
         // Use the burgers_db database
         database: 'stocks_db',
     });
