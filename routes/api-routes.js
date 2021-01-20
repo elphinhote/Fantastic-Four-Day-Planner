@@ -11,8 +11,11 @@ if (dotenv.error) {
 }
 // Set the .env data as a varible
 const apiKey = dotenv.parsed.apiKey
+
+const newsApiKey = dotenv.parsed.newsApiKey
+console.log(newsApiKey)
 // console log the API key
-console.log(apiKey)
+// console.log(apiKey)
 
 module.exports = (app) => {
     app.get('/api/all', (req, res) => {
@@ -55,7 +58,7 @@ module.exports = (app) => {
 
 
 
-        const newsUrl = `http://newsapi.org/v2/everything?q=${req.body.stock}&from=2021-01-20&sortBy=popularity&apiKey=73a4ea5fd9c54d2c9fb5628642ce8864`
+        const newsUrl = `http://newsapi.org/v2/everything?q=${req.body.stock}&from=2021-01-20&sortBy=popularity&apiKey=${newsApiKey}`
         // const newsReq = new Request(newsUrl);
         try {
             const news = await axios.get(newsUrl);
