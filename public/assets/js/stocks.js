@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Consts for the search input and search button
     const searchInput = document.querySelector(".searchInput")
     const searchBtn = document.querySelector(".searchBtn")
-    let button = document.querySelector('.submit')
+    let button = document.querySelector('#submit')
     let inputVal=document.querySelector('.inputValue')
     let namel=document.querySelector('.name')
     let dis=document.querySelector('.desc')
