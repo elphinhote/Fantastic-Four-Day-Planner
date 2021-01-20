@@ -33,9 +33,10 @@
 }
 
 .past-searches li{
-list-style: none;
-display: inline;
-background-color: black;
-color: white;
-padding: 5px;
+    margin-left: 15px;
+    list-style: none;
+    /* display: inline; */
+    background-color: black;
+    color: white;
+    padding: 5px;
 }

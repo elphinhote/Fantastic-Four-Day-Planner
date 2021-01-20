@@ -37,10 +37,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     const pastSearches = document.querySelector(".past-searches")
                     // Create the list
                     let searchTitle = document.createElement("li");
+                    searchTitle.classList.add("searches")
                     // Append the list
                     pastSearches.appendChild(searchTitle)
                     // Put the values on the screen
                     searchTitle.textContent = stock
+
+
+                    let searches = document.querySelector(".searches")
+                    let stockButton = document.createElement("button")
+                    stockButton.appendChild(searches)
+
 
                 })
             })
@@ -76,20 +83,51 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 console.error('Error:', error);
             });
 
+        console.log(newStock)
+
+
+        // Fetch Request searching stocks
+        fetch("/api/stockSearch", {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newStock),
+        })
+            .then((results) => results.json())
+            // Console log to let user know it was successful!
+            .then((data) => {
+                // console log the data object
+                console.log(data)
+
+                let stockSymbol = data["Global Quote"]["01. symbol"]
+                let stockPrice = data["Global Quote"]["05. price"]
+
+                let company = document.querySelector(".company")
+                let price = document.querySelector(".price")
+                // Display the search to the page
+                company.innerHTML = (`Stock Symbol: ${stockSymbol}`)
+                price.textContent = (`Price: $${stockPrice}`)
+
+
+            })
 
 
 
 
+        // // dotenv const to hide API key
+        // const dotenv = require('dotenv').config()
+        // // Check for errors
+        // if (dotenv.error) {
+        //     throw dotenv.error
+        // }
+        // // Set the .env data as a varible
+        // const apiKey = dotenv.parsed.apiKey
+        // // console log the API key
+        // console.log(apiKey)
 
-
-
-        // console.log(dotenv.parsed.APIKEY)
-        // let myAPI = process.env.APIKEY
         //  Api request URL for AlphaVantage (currently just searching for IBM) 
         // const requestUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${search}&apikey=T4FCSEMRY1YDLIH0`;
-
-
-
 
         // // fetch Request to get the information
         // fetch(requestUrl, {
@@ -113,16 +151,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         //         let stockSymbol = data["Global Quote"]["01. symbol"]
         //         let stockPrice = data["Global Quote"]["05. price"]
 
+        //         let company = document.querySelector(".company")
+        //         let price = document.querySelector(".price")
         //         // Display the search to the page
         //         company.innerHTML = (`Stock Symbol: ${stockSymbol}`)
         //         price.textContent = (`Price: $${stockPrice}`)
-
-        //         // Set the past searches to a li on the left side of the page
-        //         let searchTitle = document.createElement("li");
-
-        //         searchTitle.innerHTML = stockSymbol;
-        //         // append
-        //         document.querySelector(".past-searches").appendChild(searchTitle)
 
         //     })
 
