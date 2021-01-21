@@ -5,6 +5,10 @@
 .home{
     height:40px;
 }
+.jumbotron {
+color: white;
+}
+
 #card1{
     position: relative;
     padding-left: 520px;

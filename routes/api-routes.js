@@ -2,9 +2,11 @@ const { QueryTypes, EmptyResultError } = require('sequelize');
 const db = require('../models');
 const Stock = require('../models/stocks.js');
 const axios = require("axios")
-// const moment = require("moment")
+const moment = require("moment")
 
-// console.log(moment().format("MMM Do YY"))
+console.log(moment().format("MMM Do YY"))
+const today = (moment().format("YYYY-MM-DD"))
+console.log(today)
 
 // dotenv const to hide API key
 const dotenv = require('dotenv').config()
@@ -61,7 +63,7 @@ module.exports = (app) => {
 
 
 
-        const newsUrl = `http://newsapi.org/v2/everything?q=${req.body.stock}&from=2021-01-20&sortBy=popularity&apiKey=${newsApiKey}`
+        const newsUrl = `http://newsapi.org/v2/everything?q=${req.body.stock}&from=${today}&sortBy=popularity&apiKey=${newsApiKey}`
         // const newsReq = new Request(newsUrl);
         try {
             const news = await axios.get(newsUrl);
