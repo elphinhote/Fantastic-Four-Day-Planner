@@ -1,6 +1,9 @@
 const now = moment();
-const day = (moment().format("MMM Do YY"))
+const day = (moment().format("MMM Do YYYY"))
 console.log(day)
+
+const todaysDate = document.querySelector("#todays-date")
+todaysDate.textContent = (`For: ${day}`)
 
 const todaysNewsTitle1 = document.querySelector("#todays-news-1-title")
 const todaysNewsLink1 = document.querySelector("#todays-news-1-link")
