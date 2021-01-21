@@ -104,5 +104,36 @@ module.exports = (app) => {
     });
 
 
+    app.get('/api/allTodos', (req, res) => {
+
+        db.Todos.findAll({}).then((dbTodos) => {
+            res.json(dbTodos);
+            console.log(dbTodos)
+        });
+    });
+
+    app.post("/api/newTodo", (req, res) => {
+
+        db.Todos.create(req.body).then((dbTodos) => res.json(dbTodos))
+
+    });
+
+    // PUT route for updating posts
+    //   app.put('/api/posts', (req, res) => {
+    //     db.Post.update(req.body, {
+    //       where: {
+    //         id: req.body.id,
+    //       },
+    //     }).then((dbPost) => res.json(dbPost));
+    //   });
+
+    app.delete("/api/allTodos/:id", (req, res) => {
+        db.Todos.destroy({
+            where: {
+                id: req.params.id,
+            },
+        }).then((dbTodos) => res.json(dbTodos));
+    });
+
 
 };
