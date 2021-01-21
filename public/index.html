@@ -16,26 +16,26 @@
     <div class="jumbotron bg-danger text-center">
         <h1>Fantastic Four Day Planner</h1>
     </div>
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./assets/images/stock-market-ticker.jpg" alt="stock ticker">
+            <div class="card-body">
+                <!-- <form class="d-flex"> -->
+                <div></div>
+                <input id="space1" class="form-control me-2 searchInput" type="search" placeholder="Stock Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success searchBtn" type="submit">Search</button>
+                <!-- </form> -->
 
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="./assets/images/stock-market-ticker.jpg" alt="stock ticker">
-        <div class="card-body">
-            <!-- <form class="d-flex"> -->
-            <div></div>
-            <input id="space1" class="form-control me-2 searchInput" type="search" placeholder="Stock Search"
-                aria-label="Search">
-            <button class="btn btn-outline-success searchBtn" type="submit">Search</button>
-            <!-- </form> -->
-
+            </div>
         </div>
-    </div>
-    <br>
-    <card class="row col-md-3">
+        <br>
+        <card class="row col-md-2">
 
-        <ul class="past-searches">
+            <ul class="past-searches">
 
-        </ul>
-        <!-- <table class="table table-sm-5 table-dark">
+            </ul>
+            <!-- <table class="table table-sm-5 table-dark">
             <thead>
                 <tr>
                     <th scope="col" class="abb">abbreviations</th>
@@ -63,9 +63,23 @@
                     <td>$18</td>
                     <td>0.44%</td>
                 </tr> -->
-        <!-- </tbody>
+            <!-- </tbody>
         </table> -->
-    </card>
+        </card>
+        <card class="card col-md-4" style="width: 30rem;">
+            <h4 class="card-title">Today's todos</h4>
+            <div class="card-body">
+                <div>
+
+                </div>
+                <input class="form-control me-2 new-todo" type="input" placeholder="Todo">
+                <button class="btn btn-outline-success add-todo-button" type="submit">Search</button>
+            </div>
+
+
+        </card>
+    </div>
+
     <div id="container1" class=" container-fluid text-center col-sm-6">
         <div id="news" class="card-header bg-danger">
             <h1>Stock Dashboard</h1>
