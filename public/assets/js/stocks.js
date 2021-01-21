@@ -1,6 +1,6 @@
-const now = moment();
-const day = (moment().format("MMM Do YY"))
-console.log(day)
+// const now = moment();
+// const day = (moment().format("MMM Do YY"))
+// console.log(day)
 
 // Event to let the user know that the DOM content Loaded
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -220,6 +220,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 // Console log to let user know it was successful!
                 .then((data) => {
                     console.log(data)
+
+
                 })
 
         })

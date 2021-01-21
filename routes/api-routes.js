@@ -60,9 +60,6 @@ module.exports = (app) => {
         // const newsUrl = "a818b4cc3056dff4bd880c03672ec7ed"
         // http://newsapi.org/v2/everything?q=${req.body.search}&&sortBy=popularity&apiKey=${newsApiKey}
         console.log(req.body.stock)
-
-
-
         const newsUrl = `http://newsapi.org/v2/everything?q=${req.body.stock}&from=${today}&sortBy=popularity&apiKey=${newsApiKey}`
         // const newsReq = new Request(newsUrl);
         try {
@@ -73,27 +70,22 @@ module.exports = (app) => {
             res.status(500).send('Server Error - Whoops');
         }
 
-
-
-        // const newsUrl = `'http://newsapi.org/v2/everything?' +
-        // 'q=Apple&' +
-        // 'from=2021-01-20&' +
-        // 'sortBy=popularity&' +
-        // 'apiKey=73a4ea5fd9c54d2c9fb5628642ce8864'`;
-        // const news = await axios.get(newsUrl);
-        // console.log(req.body)
-        // // const newsinfo = req.body
-        // console.log(news.data)
-
-
-        // try {
-        //     const news = await axios.get(newsUrl);
-        //     res.json(news.data);
-        // } catch (error) {
-        //     console.log(err.message);
-        //     res.status(500).send("news Api Whoops");
-        // }
     })
+
+
+    app.get("/api/todaysNews", async (req, res) => {
+        const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
+
+        try {
+            const todayNews = await axios.get(todaysNewsUrl);
+            res.json(todayNews.data);
+        } catch (error) {
+            console.log(error.message);
+            res.status(500).send('Server Error - Whoops');
+        }
+
+    })
+
 
     app.delete("/api/all/:id", (req, res) => {
         db.Stocks.destroy({
@@ -137,3 +129,23 @@ module.exports = (app) => {
 
 
 };
+
+
+        // const newsUrl = `'http://newsapi.org/v2/everything?' +
+        // 'q=Apple&' +
+        // 'from=2021-01-20&' +
+        // 'sortBy=popularity&' +
+        // 'apiKey=73a4ea5fd9c54d2c9fb5628642ce8864'`;
+        // const news = await axios.get(newsUrl);
+        // console.log(req.body)
+        // // const newsinfo = req.body
+        // console.log(news.data)
+
+
+        // try {
+        //     const news = await axios.get(newsUrl);
+        //     res.json(news.data);
+        // } catch (error) {
+        //     console.log(err.message);
+        //     res.status(500).send("news Api Whoops");
+        // }
