@@ -222,6 +222,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 // Console log to let user know it was successful!
                 .then((data) => {
                     console.log(data)
+                    const stockNewsTitle = document.querySelector("#stock-news-title")
+                    stockNewsTitle.textContent = `${newStock.stock} Stock News`
+
                     const stockNews1 = document.querySelector("#stock-news-1-title")
                     const stockLink1 = document.querySelector("#stock-news-1-link")
                     const stockNews2 = document.querySelector("#stock-news-2-title")
