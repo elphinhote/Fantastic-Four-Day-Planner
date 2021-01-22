@@ -17,6 +17,8 @@ if (dotenv.error) {
 // Set the .env data as a varible
 const apiKey = dotenv.parsed.apiKey
 
+const weatherApiKey = dotenv.parsed.weatherApiKey
+
 const newsApiKey = dotenv.parsed.newsApiKey
 console.log(newsApiKey)
 // console log the API key
@@ -74,7 +76,7 @@ module.exports = (app) => {
 
 
     app.get("/api/todaysNews", async (req, res) => {
-        // const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
+        const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
 
         try {
             const todayNews = await axios.get(todaysNewsUrl);
@@ -127,6 +129,23 @@ module.exports = (app) => {
         }).then((dbTodos) => res.json(dbTodos));
     });
 
+
+
+    app.put("/api/weather", async (req, res) => {
+        console.log(req.body.weather)
+        console.log("line136")
+        const todaysWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${req.body.weather}&appid=${weatherApiKey}`
+        try {
+            const todaysWeather = await axios.get(todaysWeatherUrl);
+            res.json(todaysWeather.data);
+        } catch (error) {
+            console.log(error.message);
+            res.status(500).send('Server Error - Whoops');
+        }
+
+
+
+    })
 
 };
 
