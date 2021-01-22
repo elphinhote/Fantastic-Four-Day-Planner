@@ -1,9 +1,9 @@
 *{
     padding: 0px;
-    margin:0px
+    margin:0px;
 }
-.home{
-    height:40px;
+body{
+    background-image: url("ll.jpg");
 }
 .jumbotron {
 color: white;
@@ -11,15 +11,17 @@ color: white;
 
 #card1{
     position: relative;
-    padding-left: 520px;
+    padding-left: 620px;
 }
 #space1{
     width: 260px;
 }
 #container1{
-    display: flex;
-    flex-direction: column;
-    align-content:stretch;
+    height: 200px;
+    width:55%;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 0px; /* Added */
 }
 .table {
     width: 30%;
@@ -37,7 +39,7 @@ color: white;
 }
 
 .past-searches li{
-    margin-left: 15px;
+    margin-left: 20px;
     list-style: none;
     /* display: inline; */
     background-color: black;
@@ -45,17 +47,16 @@ color: white;
     padding: 5px;
 }
 #cardw{
-    height: 300px;
-    width:40%;
+    height: 250px;
+    width:55%;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 0px; /* Added */
     
 }
 #weather{
-    padding: 0px;
-    position: relative;
-    padding-top: 15px;
-    padding-right: 13px;
-    padding-bottom: 15px;
-    padding-left: 18px;
+    padding: 15px 13px 15px 18px;
+   
 }
 #search{
     text-align: center;
