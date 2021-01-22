@@ -48,6 +48,12 @@ color: white;
     padding: 5px;
 }
 
+.stock-news ul li{
+    margin-left: 20px;
+    list-style: none;
+    padding: 5px;
+}
+
 #weather-icon {
 height: 200px;
 width: 200px;
