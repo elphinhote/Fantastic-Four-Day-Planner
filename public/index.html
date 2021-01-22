@@ -18,28 +18,30 @@
         <h2 id="todays-date"></h2>
     </div>
     <div class="row">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./assets/images/stock-market-ticker.jpg" alt="stock ticker">
-            <div class="card-body">
-                <!-- <form class="d-flex"> -->
-                <div>
-                    <ul class="past-searches">
+        <div class="card col-md-3">
+            <card>
+                <img class="card-img-top" src="./assets/images/Blackboard.jpg" alt="stock ticker">
+                <div class="card-body">
+                    <!-- <form class="d-flex"> -->
+                    <div>
+                        <ul class="past-searches">
 
-                    </ul>
+                        </ul>
+                    </div>
+                    <input id="space1" class="form-control me-2 searchInput" type="search" placeholder="Stock Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success searchBtn" type="submit">Search</button>
+                    <!-- </form> -->
+                    <h3 class="company"></h3>
+                    <h4 class="price"></h4>
+                    <div id="hotnews" class="card-body">
+                        <button class="btn btn-success news-button">Stock News</button>
+                        <!-- id="click" href="https://www.marketwatch.com/tools/marketsummary"  -->
+                    </div>
                 </div>
-                <input id="space1" class="form-control me-2 searchInput" type="search" placeholder="Stock Search"
-                    aria-label="Search">
-                <button class="btn btn-outline-success searchBtn" type="submit">Search</button>
-                <!-- </form> -->
-                <h3 class="company"></h3>
-                <h4 class="price"></h4>
-                <div id="hotnews" class="card-body">
-                    <button class="btn btn-success news-button">Read More</button>
-                    <!-- id="click" href="https://www.marketwatch.com/tools/marketsummary"  -->
-                </div>
-            </div>
+            </card>
         </div>
-        <br>
+        <!-- <br> -->
         <!-- <card class="row col-md-2"> -->
         <!-- 
             <ul class="past-searches">
@@ -55,7 +57,7 @@
                 </tr>
             </thead>
             <tbody class="past-searches">
-                <!-- <tr>
+             <tr>
                     <th scope="row">1</th>
                     <td>Tesla</td>
                     <td>$721</td>
@@ -76,20 +78,20 @@
         <!-- </tbody>
         </table> -->
         <!-- </card> -->
-        <card class="card col-md-4" style="width: 30rem;">
-            <h4 class="card-title">Today's todos</h4>
-            <div class="card-body">
-                <input class="form-control me-2 new-todo" type="input" placeholder="Todo">
-                <button class="btn btn-outline-success add-todo-button" type="submit">Add Todo</button>
-                <div>
-                    <ul class="todo-list">
+        <div class="card col-md-4">
+            <card>
+                <h4 class="card-title">Today's todos</h4>
+                <div class="card-body">
+                    <input class="form-control me-2 new-todo" type="input" placeholder="Todo">
+                    <button class="btn btn-outline-success add-todo-button" type="submit">Add Todo</button>
+                    <div>
+                        <ul class="todo-list">
 
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-
-
-        </card>
+            </card>
+        </div>
         <!-- </div> -->
 
         <!-- <div id="container1" class=" container-fluid text-center col-sm-6">
@@ -104,19 +106,27 @@
    </div>
     </div> -->
         <!-- </div> -->
-        <div class="card" id="cardw"><button type="button" class="btn btn-primary" id="weather">Weather
-                Dashboard</button>
-            <div class="input" id="search"><br>
-                <input type="text" class="inputValue" placeholder="Enter a city name">
-                <button type="button" class="btn btn-danger" id="submit">Search</button>
-            </div>
-            <div class="display">
-                <h3 class="name"></h3>
-                <h3 class="desc"></h3>
-                <h3 class="temp"></h3>
-            </div>
+        <div class="card col-md-4">
+            <card>
+                <img class="card-img-top" id="weather-icon" src="./assets/images/weather_3_120x120.png" alt="weather">
+                <div class="card-body">
+                    <!-- <button type="button" class="btn btn-primary" id="weather">Weather
+                        Dashboard</button> -->
+                    <div class="input" id="search"><br>
+                        <input type="search" class="inputValue" placeholder="Enter a city name">
+                        <button type="submit" class="btn btn-danger" id="submit">Search</button>
+                        <!-- </div> -->
+                        <div class="display">
+                            <h3 class="name"></h3>
+                            <h3 class="desc"></h3>
+                            <h3 class="temp"></h3>
+                        </div>
+                    </div>
+                </div>
+            </card>
         </div>
     </div>
+    <br>
 
     <div class="row col-md-12">
         <card class="card">
@@ -152,6 +162,7 @@
     <script src="./assets/js/stocks.js"></script>
     <script src="./assets/js/todos.js"></script>
     <script src="./assets/js/news.js"></script>
+    <script src="./assets/js/weather.js"></script>
 
 </body>
 
