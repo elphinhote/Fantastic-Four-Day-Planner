@@ -1,27 +1,34 @@
 *{
     padding: 0px;
-    margin:0px
+    margin:0px;
 }
-.home{
-    height:40px;
+/* body{
+    background-image: url("ll.jpg");
+} */
+.jumbotron {
+color: white;
 }
-#card1{
+
+/* #card1{
     position: relative;
-    padding-left: 520px;
-}
-#space1{
+    padding-left: 620px;
+} */
+
+/* #space1{
     width: 260px;
-}
-#container1{
-    display: flex;
-    flex-direction: column;
-    align-content:stretch;
-}
-.table {
+} */
+/* #container1{
+    height: 200px;
+    width:55%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 0px; */
+/* } */
+/* .table {
     width: 30%;
     margin-left: 6px;
     border:0px;
-}
+} */
 .footer {
     position: fixed;
     left: 0;
@@ -33,10 +40,35 @@
 }
 
 .past-searches li{
-    margin-left: 15px;
+    margin-left: 20px;
     list-style: none;
     /* display: inline; */
     background-color: black;
     color: white;
     padding: 5px;
+}
+
+#weather-icon {
+height: 200px;
+width: 200px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+/* #cardw{
+    height: 250px;
+    width:55%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 0px;
+    
+} */
+/* #weather{
+    padding: 15px 13px 15px 18px;
+   
+} */
+#search{
+    text-align: center;
+    margin:10px 20px;
 }

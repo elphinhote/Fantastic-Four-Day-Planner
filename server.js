@@ -3,6 +3,9 @@ const express = require("express");
 // var expressHandlebars = require("express-handlebars");
 const htmlRouter = require('./routes/html-routes.js');
 const apiRouter = require('./routes/api-routes.js');
+// const moment = require("moment")
+
+// const day = (moment().format("MMM Do YY"))
 
 const app = express();
 
