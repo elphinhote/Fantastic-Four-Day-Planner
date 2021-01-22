@@ -5,6 +5,9 @@
 body{
     background-image: url("ll.jpg");
 }
+.jumbotron {
+color: white;
+}
 
 #card1{
     position: relative;

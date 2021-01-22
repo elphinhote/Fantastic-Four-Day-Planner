@@ -1,3 +1,7 @@
+// const now = moment();
+// const day = (moment().format("MMM Do YY"))
+// console.log(day)
+
 // Event to let the user know that the DOM content Loaded
 document.addEventListener('DOMContentLoaded', (event) => {
     if (event) {
@@ -202,17 +206,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
         newsSearchButton.addEventListener("click", (e) => {
             // prevent that default behavior
             e.preventDefault();
+            console.log("newsClicked")
+            console.log(search)
+
             fetch("/api/newsSearch", {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(search),
+                body: JSON.stringify(newStock),
             })
                 .then((results) => results.json())
                 // Console log to let user know it was successful!
                 .then((data) => {
                     console.log(data)
+
+
                 })
 
         })
@@ -220,6 +229,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         // API KET FOR NEWS 73a4ea5fd9c54d2c9fb5628642ce8864
     })
+
+    // const newsSearchButton = document.querySelector(".news-button")
+    // newsSearchButton.addEventListener("click", (e) => {
+    //     // prevent that default behavior
+    //     e.preventDefault();
+    //     console.log("newsClicked")
+    //     console.log(search)
+
+    //     fetch("/api/newsSearch", {
+    //         method: "PUT",
+    //         // headers: {
+    //         //     'Content-Type': 'application/json',
+    //         // },
+    //         body: JSON.stringify(search),
+    //     })
+    //         .then((results) => results.json())
+    //         // Console log to let user know it was successful!
+    //         .then((data) => {
+    //             console.log(data)
+    //         })
+
+    // })
 
 
 })
