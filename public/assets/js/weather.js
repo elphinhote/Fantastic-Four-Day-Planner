@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // console.info("DOM content Loaded");
     }
 
+
     let button = document.querySelector('#weather')
     let inputVal = document.querySelector('.inputValue')
     let namel = document.querySelector('.name')
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         //         dis.textContent = ('Seems like: ') + disval;
         //     })
         //     .catch(err => console.log(err))
-        swal('Good job','See the weather!','success')
+        swal('Good job', 'See the weather!', 'success')
         const weatherSearch = {
             weather: inputVal.value
         }

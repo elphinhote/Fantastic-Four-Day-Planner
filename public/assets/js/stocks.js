@@ -361,11 +361,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
                     stockNews1.textContent = data.articles[0].title
-                    stockLink1.textContent = data.articles[0].url
+                    stockLink1.innerHTML = `<a href="${data.articles[0].url}" target="_blank">${data.articles[0].url}<a>`
                     stockNews2.textContent = data.articles[1].title
-                    stockLink2.textContent = data.articles[1].url
+                    stockLink2.innerHTML = `<a href="${data.articles[1].url}" target="_blank">${data.articles[1].url}<a>`
                     stockNews3.textContent = data.articles[2].title
-                    stockLink3.textContent = data.articles[2].url
+                    stockLink3.innerHTML = `<a href="${data.articles[2].url}" target="_blank">${data.articles[2].url}<a>`
 
 
                 })

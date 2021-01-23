@@ -26,16 +26,19 @@ function todaysNews() {
         // Console log to let user know it was successful!
         .then((data) => {
             console.log(data)
+
+
+
             todaysNewsTitle1.textContent = data.articles[0].title
-            todaysNewsLink1.textContent = data.articles[0].url
+            todaysNewsLink1.innerHTML = `<a href="${data.articles[0].url}" target="_blank">${data.articles[0].url}<a>`
             todaysNewsTitle2.textContent = data.articles[1].title
-            todaysNewsLink2.textContent = data.articles[1].url
+            todaysNewsLink2.innerHTML = `<a href="${data.articles[1].url}" target="_blank">${data.articles[1].url}<a>`
             todaysNewsTitle3.textContent = data.articles[2].title
-            todaysNewsLink3.textContent = data.articles[2].url
+            todaysNewsLink3.innerHTML = `<a href="${data.articles[2].url}" target="_blank">${data.articles[2].url}<a>`
             todaysNewsTitle4.textContent = data.articles[3].title
-            todaysNewsLink4.textContent = data.articles[3].url
+            todaysNewsLink4.innerHTML = `<a href="${data.articles[3].url}" target="_blank">${data.articles[3].url}<a>`
             todaysNewsTitle5.textContent = data.articles[4].title
-            todaysNewsLink5.textContent = data.articles[4].url
+            todaysNewsLink5.innerHTML = `<a href="${data.articles[4].url}" target="_blank">${data.articles[4].url}<a>`
 
 
 
