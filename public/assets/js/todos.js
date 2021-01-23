@@ -51,8 +51,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                     const todoList = document.querySelector(".todo-list");
                     let todoName = document.createElement("li");
+
                     todoName.classList.add("todo-name")
                     todoList.append(todoName)
+
 
                     let todoNameSelector = document.querySelector(".todo-name")
 
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
                     let updateTodo = document.createElement("button");
-                    updateTodo.innerHTML = "update"
+                    updateTodo.textContent = "update"
                     updateTodo.classList.add("updateTodo");
                     let updateTodoId = updateTodo.setAttribute("id", id)
 
@@ -89,7 +91,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
                     todoName.textContent = todo
-                    todoNameSelector.append(deleteTodo)
+                    todoNameSelector.append(deleteTodo, updateTodo)
                     // todoList.append(todoName, deleteTodo, updateTodo)
                 })
                 // .catch((error) => console.error('Error:', error));
