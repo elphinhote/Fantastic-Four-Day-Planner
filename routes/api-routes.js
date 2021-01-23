@@ -130,7 +130,7 @@ module.exports = (app) => {
     });
 
     app.put("/api/allTodos", (req, res) => {
-        db.Todos.findOne(req.body, {
+        db.Todos.findOne({
             where: {
                 id: req.body.id,
             },

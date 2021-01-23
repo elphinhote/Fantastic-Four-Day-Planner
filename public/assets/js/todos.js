@@ -41,7 +41,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         console.log("update clicked")
                         updateTodoId = e.target.getAttribute("id")
                         console.log(updateTodoId)
-                        updateTodoRequest(updateTodoId)
+                        console.log(todo)
+
+                        updateTodoRequest(updateTodoId, todo)
+
                     })
 
                     let todoId = deleteTodo.setAttribute("id", id)
@@ -115,7 +118,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }).then(getTodos);
     };
 
-    function updateTodoRequest(updateTodoId) {
+    function updateTodoRequest(updateTodoId, todo) {
         fetch(`/api/allTodos`, {
             method: 'PUT',
             headers: {
@@ -126,6 +129,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }).then((response) => response.json())
             .then((data) => {
                 console.log(data)
+                console.log("Update")
+
+                console.log(todo)
+
+
+
+
             })
     }
 
