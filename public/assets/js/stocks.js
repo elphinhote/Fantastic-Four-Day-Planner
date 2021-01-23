@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // prevent that default behavior
         e.preventDefault();
         // Variable for the search
+        swal('Whoo!!','Go for your stock!','info')
         let search = searchInput.value
 
         // Fetch Request to get all of the past searched stocks from the database
