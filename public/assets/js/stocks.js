@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     if (event) {
         // Let user know that everything loaded correctly
-        console.info("DOM content Loaded");
+        // console.info("DOM content Loaded");
     }
     // // Consts for the search input and search button
     const searchInput = document.querySelector(".searchInput")

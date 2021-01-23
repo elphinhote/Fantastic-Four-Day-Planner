@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     if (event) {
         // Let user know that everything loaded correctly
-        console.info("DOM content Loaded");
+        // console.info("DOM content Loaded");
     }
 
     const getTodos = () => {
         console.log('Get todos');
+
+        let todoList = document.querySelector(".todo-list");
+        todoList.textContent = ""
+
         fetch('/api/allTodos', {
             method: 'GET',
             headers: {
@@ -14,11 +18,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 data.forEach(({ id, todo }) => {
                     console.log(todo)
 
-                    const todoList = document.querySelector(".todo-list");
+                    let todoList = document.querySelector(".todo-list");
                     let todoName = document.createElement("li");
 
                     todoName.classList.add("todo-name")
@@ -54,6 +58,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         console.log(todoId)
 
                         deleteTodoRequest(todoId)
+                        todoName.textContent = ""
+                        // todoId.textContent = ""
+                        // updateTodoId.textContent = ""
                     })
 
 
@@ -80,8 +87,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // prevent that default behavior
         e.preventDefault();
         const newTodo = newTodoInput.value
-        console.log("todoclicked")
-        console.log(newTodo)
+        // console.log("todoclicked")
+        // console.log(newTodo)
 
         const addTodo = {
             todo: newTodo,
@@ -99,8 +106,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             .then((addTodo) => addTodo.json())
             .then((data) => {
                 console.log('Success in adding todo:', data);
-                console.log(`Todo added: ${addTodo.todo}`);
+                // console.log(`Todo added: ${addTodo.todo}`);
                 newTodoInput.value = ""
+                // todoList.textContent = ""
+
+
+                // location.reload()
                 getTodos()
             })
             // Catching all them errors!

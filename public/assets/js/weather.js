@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     if (event) {
         // Let user know that everything loaded correctly
-        console.info("DOM content Loaded");
+        // console.info("DOM content Loaded");
     }
 
     let button = document.querySelector('#weather')
