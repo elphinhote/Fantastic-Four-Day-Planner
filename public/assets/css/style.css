@@ -7,25 +7,15 @@
 color: white;
 }
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color:lightblue;
-    color: white;
-    text-align: center;
-}
-
 .past-searches li{
     margin-left: 15px;
-    list-style: none;
+    /* list-style: none; */
     padding: 5px;
 }
 
 .stock-news ul li{
     margin-left: 20px;
-    list-style: none;
+    /* list-style: none; */
     padding: 5px;
 }
 
@@ -41,4 +31,19 @@ width: 50%;
 #search{
     text-align: center;
     margin:10px 20px;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:lightblue;
+    color: white;
+    text-align: center;
+}
+
+.footer li {
+    list-style: none;
+    display: inline;
+    padding: 10px;
 }

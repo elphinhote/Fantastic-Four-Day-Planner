@@ -2,12 +2,21 @@ const { QueryTypes, EmptyResultError } = require('sequelize');
 const db = require('../models');
 const Stock = require('../models/stocks.js');
 const axios = require("axios")
-const moment = require("moment")
+// const moment = require("moment")
 
-console.log(moment().format("MMM Do YY"))
-const today = (moment().format("YYYY-MM-DD"))
+// console.log(moment().format("MMM Do YY"))
+// const today = (moment().format("YYYY-MM-DD"))
+// console.log(today)
+
+
+const { DateTime } = require("luxon");
+dt = DateTime.local()
+// console.log(dt)
+let yearLuxon = dt.c.year
+let monthLuxon = dt.c.month
+let dayLuxon = dt.c.day
+today = (`${yearLuxon}-${monthLuxon}-${dayLuxon}`)
 console.log(today)
-
 // dotenv const to hide API key
 const dotenv = require('dotenv').config()
 // Check for errors
@@ -76,7 +85,7 @@ module.exports = (app) => {
 
 
     app.get("/api/todaysNews", async (req, res) => {
-        // const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
+        const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
 
         try {
             const todayNews = await axios.get(todaysNewsUrl);
