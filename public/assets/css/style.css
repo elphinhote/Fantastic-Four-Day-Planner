@@ -19,31 +19,44 @@ color: white;
     padding: 5px;
 }
 
-#weather-icon {
+.photo {
 height: 200px;
-width: 200px;
+width: 325px;
 display: block;
 margin-left: auto;
 margin-right: auto;
-width: 50%;
 }
 
-#search{
+/* #search{
     text-align: center;
     margin:10px 20px;
+} */
+
+.news {
+margin-left: 5px;
 }
+
+.stock-news-list {
+    list-style: none;
+}
+
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color:lightblue;
+    background-color: rgba(173, 216, 230, 0.5);
     color: white;
     text-align: center;
+    /* lightblue 173,216,230; */
 }
 
 .footer li {
     list-style: none;
     display: inline;
     padding: 10px;
+    color: grey
+}
+.footer li a {
+    color: white;
 }
