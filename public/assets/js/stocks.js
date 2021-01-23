@@ -73,18 +73,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     // Set the past searches to a li on the left side of the page
                     const pastSearches = document.querySelector(".past-searches")
                     // Create the list
+                    // let searchTitle = document.createElement("li");
+                    // searchTitle.classList.add("searched")
+
+
+
+                    // let deleteButton = document.createElement("button");
+                    // deleteButton.classList.add("delete-stock")
+
+
+                    // deleteButton.innerHTML = "delete"
+
+
+                    //TEST Delete Button Move
                     let searchTitle = document.createElement("li");
                     searchTitle.classList.add("searched")
+                    pastSearches.append(searchTitle)
 
+
+                    let searched = document.querySelector(".searched")
                     let deleteButton = document.createElement("button");
                     deleteButton.classList.add("delete-stock")
-
+                    deleteButton.textContent = "Delete"
                     let stockId = deleteButton.setAttribute("id", id)
-                    deleteButton.innerHTML = "delete"
+
+
                     deleteButton.addEventListener("click", (e) => {
                         console.log("clicked")
                         stockId = e.target.getAttribute("id")
                         console.log(stockId)
+
+
+
 
                         fetch(`/api/all/${stockId}`, {
                             method: 'DELETE',
@@ -105,11 +125,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     }
                     )
                     // Append the list
-                    pastSearches.append(searchTitle, deleteButton)
+                    // pastSearches.append(searchTitle, deleteButton)
+                    // searched.append(deleteButton)
+                    // pastSearches.append(searchTitle)
+                    // searchTitle.append(deleteButton)
+                    // pastSearches.appendChild(searchTitle)
+                    // deleteButton.appendChild(searchTitle)
                     // searchTitle.append(searchButton)
                     // Put the values on the screen
                     searchTitle.textContent = stock
-
+                    searched.append(deleteButton)
                     // Search Again Button Test
                     // let searchAgainButton = document.createElement("button");
                     // searchAgainButton.innerHTML = "search Again"

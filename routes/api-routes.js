@@ -129,6 +129,35 @@ module.exports = (app) => {
         }).then((dbTodos) => res.json(dbTodos));
     });
 
+    app.put("/api/allTodos", (req, res) => {
+        db.Todos.findOne(req.body, {
+            where: {
+                id: req.body.id,
+            },
+        }).then((dbTodos) => res.json(dbTodos));
+
+
+
+    });
+
+
+    //UPDATE TEST!
+    // app.put("/api/allTodos/:id", (req, res, cb) => {
+    //     Todos.update(
+    //         { todo: req.body.todo },
+    //         {
+    //             returning: true, where: {
+    //                 id: req.body.id,
+    //             },
+    //         }).then(function ([rowsUpdate, [updateTodo]]) {
+    //             res.json(updatedTodo)
+    //         })
+    //         .catch(cb)
+    // })
+
+
+
+    // });
 
 
     app.put("/api/weather", async (req, res) => {

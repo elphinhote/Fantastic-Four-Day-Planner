@@ -59,10 +59,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     updateTodo.innerHTML = "update"
                     updateTodo.classList.add("updateTodo");
                     let updateTodoId = updateTodo.setAttribute("id", id)
+
                     updateTodo.addEventListener("click", (e) => {
-                        console.log("clicked")
+                        console.log("update clicked")
                         updateTodoId = e.target.getAttribute("id")
                         console.log(updateTodoId)
+                        updateTodoRequest(updateTodoId)
+
+
                     })
 
                     let todoId = deleteTodo.setAttribute("id", id)
@@ -126,6 +130,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             .then((data) => {
                 console.log('Success in adding todo:', data);
                 console.log(`Todo added: ${addTodo.todo}`);
+                newTodoInput.value = ""
                 getTodos()
             })
             // Catching all them errors!
@@ -142,6 +147,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
             },
         }).then(getTodos);
     };
+
+    function updateTodoRequest(updateTodoId) {
+        fetch(`/api/allTodos`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updateTodoId),
+
+        }).then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+            })
+    }
+
+    // UPDATE TEST!
+    // function updateTodoRequest(updateTodoId) {
+    //     fetch(`/api/allTodos/:${updateTodoId}`, {
+    //         method: "PUT",
+
+    //     }).then((response) => response.json())
+    //         .then((data) => {
+    //             console.log(data)
+
+    //         })
+    // }
+
+
+    // newTodoInput.value = data.todo
+    // // addTodoButton.textContent = "update"
+    // let newUpdateBtn = createElement("button")
+    // newUpdateBtn.classList.add("new-update-button")
+    // const newUpdateButton = document.querySelector(".new-update-button")
+    // newUpdateButton.addEventListener('click', (e) => {
+    //     // prevent that default behavior
+    //     e.preventDefault();
+    //     console.log("click")
+
+
+    // })
+    // .then(getTodos);
+});
+    // }
 
     // const getTodos = () => {
     //     console.log('Get todos');
@@ -185,4 +233,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-})
+// })
