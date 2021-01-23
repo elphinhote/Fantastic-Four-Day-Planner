@@ -1,5 +1,5 @@
 # Fantastic-Four-Stocks
-<h1> Introduction <h1>
+<h1> Introduction </h1>
 
 The project is designed for user who have a busy schedule and can just go on our app and see all the stuffs needed when they start their day. The app makes the user easy to read news, see what's going with their stock, see the weather and plan their day. For this project we have decided to work on various different sources.When the page loads you will see the top headlines and the user will be given an option to input on various resources i.e. :
 <ul>stock site</ul>
