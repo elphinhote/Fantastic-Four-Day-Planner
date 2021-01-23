@@ -51,9 +51,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                     const todoList = document.querySelector(".todo-list");
                     let todoName = document.createElement("li");
+                    todoName.classList.add("todo-name")
+                    todoList.append(todoName)
+
+                    let todoNameSelector = document.querySelector(".todo-name")
 
                     let deleteTodo = document.createElement("button");
                     deleteTodo.classList.add("delete-todo");
+                    deleteTodo.textContent = "Delete"
+
 
                     let updateTodo = document.createElement("button");
                     updateTodo.innerHTML = "update"
@@ -70,7 +76,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     })
 
                     let todoId = deleteTodo.setAttribute("id", id)
-                    deleteTodo.innerHTML = "delete"
+                    // deleteTodo.innerHTML = "delete"
                     deleteTodo.addEventListener("click", (e) => {
                         console.log("clicked")
                         todoId = e.target.getAttribute("id")
@@ -83,7 +89,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
                     todoName.textContent = todo
-                    todoList.append(todoName, deleteTodo, updateTodo)
+                    todoNameSelector.append(deleteTodo)
+                    // todoList.append(todoName, deleteTodo, updateTodo)
                 })
                 // .catch((error) => console.error('Error:', error));
 

@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                     //TEST Delete Button Move
                     let searchTitle = document.createElement("li");
-                    searchTitle.classList.add("searched")
+                    searchTitle.classList.add("stockSearched")
                     pastSearches.append(searchTitle)
 
 
-                    let searched = document.querySelector(".searched")
+                    let stockSearched = document.querySelector(".stockSearched")
                     let deleteButton = document.createElement("button");
                     deleteButton.classList.add("delete-stock")
                     deleteButton.textContent = "Delete"
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     )
                     // Append the list
                     // pastSearches.append(searchTitle, deleteButton)
-                    // searched.append(deleteButton)
+                    // stockSearched.append(deleteButton)
                     // pastSearches.append(searchTitle)
                     // searchTitle.append(deleteButton)
                     // pastSearches.appendChild(searchTitle)
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     // searchTitle.append(searchButton)
                     // Put the values on the screen
                     searchTitle.textContent = stock
-                    searched.append(deleteButton)
+                    stockSearched.append(deleteButton)
                     // Search Again Button Test
                     // let searchAgainButton = document.createElement("button");
                     // searchAgainButton.innerHTML = "search Again"
