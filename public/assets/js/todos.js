@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     let todoName = document.createElement("li");
 
                     todoName.classList.add("todo-name")
-                    todoList.append(todoName)
+                    // todoList.append(todoName)
 
 
                     let todoNameSelector = document.querySelector(".todo-name")
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
                     todoName.textContent = todo
-                    todoNameSelector.append(deleteTodo, updateTodo)
+                    todoList.append(todoName, deleteTodo, updateTodo)
 
                 })
                 // .catch((error) => console.error('Error:', error));
