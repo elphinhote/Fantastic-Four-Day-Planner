@@ -4,37 +4,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.info("DOM content Loaded");
     }
 
-
-
-
-
-    //     const getTodos = () => {
-    //         console.log('Get todos');
-    //         fetch('/api/allTodos', {
-    //             method: 'GET',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //         })
-    //             .then((response) => response.json())
-    //             .then((data) => {
-    //                 console.log(data)
-    //             })
-
-
-
-
-
-
-    //             .catch((error) => console.error('Error:', error));
-    //     };
-
-    //     // Get the list of todos
-    //     getTodos();
-    // });
-
-
-
     const getTodos = () => {
         console.log('Get todos');
         fetch('/api/allTodos', {
@@ -52,34 +21,45 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     const todoList = document.querySelector(".todo-list");
                     let todoName = document.createElement("li");
 
+                    todoName.classList.add("todo-name")
+                    // todoList.append(todoName)
+
+
+                    let todoNameSelector = document.querySelector(".todo-name")
+
                     let deleteTodo = document.createElement("button");
                     deleteTodo.classList.add("delete-todo");
+                    deleteTodo.textContent = "Delete"
+
 
                     let updateTodo = document.createElement("button");
-                    updateTodo.innerHTML = "update"
+                    updateTodo.textContent = "update"
                     updateTodo.classList.add("updateTodo");
                     let updateTodoId = updateTodo.setAttribute("id", id)
+
                     updateTodo.addEventListener("click", (e) => {
-                        console.log("clicked")
+                        console.log("update clicked")
                         updateTodoId = e.target.getAttribute("id")
                         console.log(updateTodoId)
+                        console.log(todo)
+
+                        updateTodoRequest(updateTodoId, todo)
+
                     })
 
                     let todoId = deleteTodo.setAttribute("id", id)
-                    deleteTodo.innerHTML = "delete"
                     deleteTodo.addEventListener("click", (e) => {
                         console.log("clicked")
                         todoId = e.target.getAttribute("id")
                         console.log(todoId)
 
                         deleteTodoRequest(todoId)
-
-
                     })
 
 
                     todoName.textContent = todo
                     todoList.append(todoName, deleteTodo, updateTodo)
+
                 })
                 // .catch((error) => console.error('Error:', error));
 
@@ -92,12 +72,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     }
     getTodos()
-
-
-
-
-
-
 
 
     const newTodoInput = document.querySelector(".new-todo")
@@ -126,6 +100,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             .then((data) => {
                 console.log('Success in adding todo:', data);
                 console.log(`Todo added: ${addTodo.todo}`);
+                newTodoInput.value = ""
                 getTodos()
             })
             // Catching all them errors!
@@ -143,46 +118,53 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }).then(getTodos);
     };
 
-    // const getTodos = () => {
-    //     console.log('Get todos');
-    //     fetch('/api/allTodos', {
-    //         method: 'GET',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //     })
-    //         .then((response) => response.json())
+    function updateTodoRequest(updateTodoId, todo) {
+        fetch(`/api/allTodos`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updateTodoId),
+
+        }).then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                console.log("Update")
+
+                console.log(todo)
+
+
+
+
+            })
+    }
+
+    // TEST UPDATE TEST!
+    // function updateTodoRequest(updateTodoId) {
+    //     fetch(`/api/allTodos/:${updateTodoId}`, {
+    //         method: "PUT",
+
+    //     }).then((response) => response.json())
     //         .then((data) => {
     //             console.log(data)
-    //             data.forEach(({ id, todo }) => {
-    //                 console.log(todo)
 
-    //                 const todoList = document.querySelector(".todo-list");
-    //                 let todoName = document.createElement("li");
-
-    //                 let deleteTodo = document.createElement("button");
-    //                 deleteTodo.classList.add("delete-todo")
-
-    //                 let todoId = deleteTodo.setAttribute("id", id)
-    //                 deleteTodo.innerHTML = "delete"
-    //                 deleteTodo.addEventListener("click", (e) => {
-    //                     console.log("clicked")
-    //                     todoId = e.target.getAttribute("id")
-
-    //                 })
-    //                 todoName.textContent = todo
-    //                 todoList.append(todoName, deleteTodo)
-    //             })
-    //                 .catch((error) => console.error('Error:', error));
-
-    //             // Get the list of todos
-    //             getTodos();
     //         })
-
-
     // }
 
 
+    // newTodoInput.value = data.todo
+    // // addTodoButton.textContent = "update"
+    // let newUpdateBtn = createElement("button")
+    // newUpdateBtn.classList.add("new-update-button")
+    // const newUpdateButton = document.querySelector(".new-update-button")
+    // newUpdateButton.addEventListener('click', (e) => {
+    //     // prevent that default behavior
+    //     e.preventDefault();
+    //     console.log("click")
 
 
-})
+    // })
+    // .then(getTodos);
+    //END OF TEST
+
+});

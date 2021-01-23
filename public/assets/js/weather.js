@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.info("DOM content Loaded");
     }
 
-    let button = document.querySelector('#submit')
+    let button = document.querySelector('#weather')
     let inputVal = document.querySelector('.inputValue')
     let namel = document.querySelector('.name')
     let dis = document.querySelector('.desc')
