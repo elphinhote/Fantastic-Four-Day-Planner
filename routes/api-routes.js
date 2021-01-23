@@ -129,12 +129,12 @@ module.exports = (app) => {
         }).then((dbTodos) => res.json(dbTodos));
     });
 
-    app.put("/api/allTodos", (req, res) => {
-        db.Todos.findOne({
-            where: {
-                id: req.body.id,
-            },
-        }).then((dbTodos) => res.json(dbTodos));
+    app.put("/api/allTodos/:id", (req, res) => {
+        console.log(req.params.id)
+        db.Todos.update(
+            { todo: req.body.todo },
+            { where: { id: req.params.id } })
+            .then((dbTodos) => res.json(dbTodos));
 
 
 

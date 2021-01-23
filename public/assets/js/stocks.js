@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const searchBtn = document.querySelector(".searchBtn")
 
 
+    
+// ADD GET STOCKS FUNCTION
+
+
     // Event listener for the stock search button
     searchBtn.addEventListener("click", (e) => {
         // prevent that default behavior
