@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         //         dis.textContent = ('Seems like: ') + disval;
         //     })
         //     .catch(err => console.log(err))
+        swal('Good job','See the weather!','success')
         const weatherSearch = {
             weather: inputVal.value
         }

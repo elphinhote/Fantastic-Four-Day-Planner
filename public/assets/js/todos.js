@@ -89,8 +89,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const newTodo = newTodoInput.value
         // console.log("todoclicked")
         // console.log(newTodo)
-
+        swal('Great','Added to your list','success')
         const addTodo = {
+            
             todo: newTodo,
         }
         // Create a todo
