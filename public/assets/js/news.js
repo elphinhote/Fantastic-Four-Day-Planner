@@ -17,7 +17,7 @@ const todaysNewsTitle5 = document.querySelector("#todays-news-5-title")
 const todaysNewsLink5 = document.querySelector("#todays-news-5-link")
 
 
-console.log(search)
+// console.log(search)
 function todaysNews() {
     fetch("/api/todaysNews", {
         method: "GET",

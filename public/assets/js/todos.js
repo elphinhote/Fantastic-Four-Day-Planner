@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         console.log(updateTodoId)
                         console.log(todo)
 
-                        updateTodoRequest(updateTodoId, todo)
+                        updateTodoRequest(updateTodoId)
 
                     })
 
@@ -130,26 +130,100 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }).then(getTodos);
     };
 
-    function updateTodoRequest(updateTodoId, todo) {
-        fetch(`/api/allTodos`, {
-            method: 'PUT',
+    function updateTodoRequest(updateTodoId) {
+        console.log(updateTodoId)
+
+        // console.log(newTodoInput)
+
+        let updateTheTodo = newTodoInput.value
+        console.log(updateTheTodo)
+
+        const updTodo = {
+            todo: updateTheTodo,
+        }
+
+        fetch(`/api/allTodos/${updateTodoId}`, {
+            method: "PUT",
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(updateTodoId),
-
-        }).then((response) => response.json())
+            body: JSON.stringify(updTodo),
+        })
+            .then((results) => results.json())
             .then((data) => {
-                console.log(data)
-                console.log("Update")
-
-                console.log(todo)
-
-
+                console.log('Success in updating:', data);
+                // console.log(`Todo added: ${addTodo.todo}`);
+                newTodoInput.value = ""
+                // todoList.textContent = ""
 
 
+                // location.reload()
+                getTodos()
             })
+            // Catching all them errors!
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+
     }
+    // const newTodoInput = document.querySelector(".new-todo")
+
+    // const update = newTodoInput.value
+    // console.log("todoclicked")
+    // console.log(newTodo)
+
+    // const addTodo = {
+    //     todo: newTodo,
+    // }
+    // Create a todo
+
+    // fetch("/api/newTodo", {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(addTodo),
+    // })
+    //     // Json the data
+    //     .then((addTodo) => addTodo.json())
+    //     .then((data) => {
+    //         console.log('Success in adding todo:', data);
+    //         // console.log(`Todo added: ${addTodo.todo}`);
+    //         newTodoInput.value = ""
+    //         // todoList.textContent = ""
+
+
+    //         // location.reload()
+    //         getTodos()
+    //     })
+    //     // Catching all them errors!
+    //     .catch((error) => {
+    //         console.error('Error:', error);
+    //     });
+
+
+
+    // fetch(`/api/allTodos`, {
+    //     method: 'PUT',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(updateTodoId),
+
+    // }).then((response) => response.json())
+    //     .then((data) => {
+    //         console.log(data)
+    //         console.log("Update")
+
+    //         // console.log(todo)
+
+
+
+
+
+    // })
+    // }
 
     // TEST UPDATE TEST!
     // function updateTodoRequest(updateTodoId) {
