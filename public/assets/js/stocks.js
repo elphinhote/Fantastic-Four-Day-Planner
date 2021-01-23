@@ -331,6 +331,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             })
 
+
+
+
         const newsSearchButton = document.querySelector(".news-button")
         newsSearchButton.addEventListener("click", (e) => {
             // prevent that default behavior
