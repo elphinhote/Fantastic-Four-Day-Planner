@@ -4,37 +4,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.info("DOM content Loaded");
     }
 
-
-
-
-
-    //     const getTodos = () => {
-    //         console.log('Get todos');
-    //         fetch('/api/allTodos', {
-    //             method: 'GET',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //         })
-    //             .then((response) => response.json())
-    //             .then((data) => {
-    //                 console.log(data)
-    //             })
-
-
-
-
-
-
-    //             .catch((error) => console.error('Error:', error));
-    //     };
-
-    //     // Get the list of todos
-    //     getTodos();
-    // });
-
-
-
     const getTodos = () => {
         console.log('Get todos');
         fetch('/api/allTodos', {
@@ -73,26 +42,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         updateTodoId = e.target.getAttribute("id")
                         console.log(updateTodoId)
                         updateTodoRequest(updateTodoId)
-
-
                     })
 
                     let todoId = deleteTodo.setAttribute("id", id)
-                    // deleteTodo.innerHTML = "delete"
                     deleteTodo.addEventListener("click", (e) => {
                         console.log("clicked")
                         todoId = e.target.getAttribute("id")
                         console.log(todoId)
 
                         deleteTodoRequest(todoId)
-
-
                     })
 
 
                     todoName.textContent = todo
                     todoNameSelector.append(deleteTodo, updateTodo)
-                    // todoList.append(todoName, deleteTodo, updateTodo)
+
                 })
                 // .catch((error) => console.error('Error:', error));
 
@@ -105,12 +69,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     }
     getTodos()
-
-
-
-
-
-
 
 
     const newTodoInput = document.querySelector(".new-todo")
@@ -171,7 +129,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             })
     }
 
-    // UPDATE TEST!
+    // TEST UPDATE TEST!
     // function updateTodoRequest(updateTodoId) {
     //     fetch(`/api/allTodos/:${updateTodoId}`, {
     //         method: "PUT",
@@ -197,49 +155,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // })
     // .then(getTodos);
+    //END OF TEST
+
 });
-    // }
-
-    // const getTodos = () => {
-    //     console.log('Get todos');
-    //     fetch('/api/allTodos', {
-    //         method: 'GET',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //     })
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             console.log(data)
-    //             data.forEach(({ id, todo }) => {
-    //                 console.log(todo)
-
-    //                 const todoList = document.querySelector(".todo-list");
-    //                 let todoName = document.createElement("li");
-
-    //                 let deleteTodo = document.createElement("button");
-    //                 deleteTodo.classList.add("delete-todo")
-
-    //                 let todoId = deleteTodo.setAttribute("id", id)
-    //                 deleteTodo.innerHTML = "delete"
-    //                 deleteTodo.addEventListener("click", (e) => {
-    //                     console.log("clicked")
-    //                     todoId = e.target.getAttribute("id")
-
-    //                 })
-    //                 todoName.textContent = todo
-    //                 todoList.append(todoName, deleteTodo)
-    //             })
-    //                 .catch((error) => console.error('Error:', error));
-
-    //             // Get the list of todos
-    //             getTodos();
-    //         })
-
-
-    // }
-
-
-
-
-// })
