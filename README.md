@@ -34,12 +34,26 @@ The todo app is designed to plan the user day. Once they have opened the app the
 <br>
 <br>
 <h1>Footer</h1>
-add it later
+  In the footer We have included the contact details of our team members. When the user click on the team-members github links it will open the user github respitory and can contribute to the project.
 <br>
 <br>
 <h1> Team-members </h1>
  <li>Sean Melody</li>
  <li>Eva Wang </li>
  <li>Sudan Bhusal </li>
+ <br>
+ <br>
+ <h1>Resources used: </h1>
+ <li>HTML</li>
+ <li>CSS</li>
+ <li>JS</li>
+ <li>Web Api</li>
+ <li>Schema</li>
+
+ <br>
+ <br>
+ <h1>Here is how it looks like: </h1>
+
+ ![image](https://user-images.githubusercontent.com/71658001/105621615-5370c180-5dbe-11eb-91d4-6497c260b4d1.png)
 
 
