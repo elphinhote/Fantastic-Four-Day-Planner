@@ -10,15 +10,15 @@
     <!-- Favicon Link -->
     <link rel="icon" type="image/png" href="./assets/images/Favicon.png" />
     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
-    <title>NSE</title>
+    <title>Day Planner</title>
 </head>
 
 <body>
-    <div class="jumbotron bg-dark text-center">
+    <div class="jumbotron text-center">
         <h1>Fantastic Four's Day Planner</h1>
         <h2 id="todays-date"></h2>
     </div>
-    <div class="row">
+    <div class="row top">
         <div class="card col-md-4">
             <card>
                 <img class="card-img-top photo" src="./assets/images/Blackboard.jpg" alt="stock ticker">
@@ -79,51 +79,54 @@
         </div>
     </div>
     <br>
-
-    <div class="row col-md-12">
-        <card class="card news">
-            <h3 class="card-title">Today's News</h3>
-            <ul class="todays-news-1">
-                <li id="todays-news-1-title"></li>
-                <a id="todays-news-1-link"></a>
-            </ul>
-            <ul class="todays-news-2">
-                <li id="todays-news-2-title"></li>
-                <a id="todays-news-2-link"></a>
-            </ul>
-            <ul class="todays-news-3">
-                <li id="todays-news-3-title"></li>
-                <a id="todays-news-3-link"></a>
-            </ul>
-            <ul class="todays-news-4">
-                <li id="todays-news-4-title"></li>
-                <a id="todays-news-4-link"></a>
-            </ul>
-            <ul class="todays-news-5">
-                <li id="todays-news-5-title"></li>
-                <a id="todays-news-5-link"></a>
-            </ul>
-        </card>
+    <div class="container">
+        <div class="row col-md-12 justify-content-md-center top">
+            <card class="card">
+                <h3 class="card-title">Today's News</h3>
+                <ul class="todays-news-1">
+                    <li id="todays-news-1-title"></li>
+                    <a id="todays-news-1-link"></a>
+                </ul>
+                <ul class="todays-news-2">
+                    <li id="todays-news-2-title"></li>
+                    <a id="todays-news-2-link"></a>
+                </ul>
+                <ul class="todays-news-3">
+                    <li id="todays-news-3-title"></li>
+                    <a id="todays-news-3-link"></a>
+                </ul>
+                <ul class="todays-news-4">
+                    <li id="todays-news-4-title"></li>
+                    <a id="todays-news-4-link"></a>
+                </ul>
+                <ul class="todays-news-5">
+                    <li id="todays-news-5-title"></li>
+                    <a id="todays-news-5-link"></a>
+                </ul>
+            </card>
+        </div>
     </div>
-    <div class="row col-md-12">
-        <card class="card">
-            <div>
-                <h4 id="stock-news-title"></h4>
-                <ul class="stock-news-list">
-                    <li id="stock-news-1-title"></li>
-                    <a id="stock-news-1-link"></a>
-                </ul>
-                <ul class="stock-news-list">
-                    <li id="stock-news-2-title"></li>
-                    <a id="stock-news-2-link"></a>
-                </ul>
-                <ul class="stock-news-list">
-                    <li id="stock-news-3-title"></li>
-                    <a id="stock-news-3-link"></a>
-                </ul>
-            </div>
-        </card>
+    <div class="container">
+        <div class="row col-md-12 news">
+            <card class="card">
+                <div>
+                    <h4 id="stock-news-title"></h4>
+                    <ul class="stock-news-list">
+                        <li id="stock-news-1-title"></li>
+                        <a id="stock-news-1-link"></a>
+                    </ul>
+                    <ul class="stock-news-list">
+                        <li id="stock-news-2-title"></li>
+                        <a id="stock-news-2-link"></a>
+                    </ul>
+                    <ul class="stock-news-list">
+                        <li id="stock-news-3-title"></li>
+                        <a id="stock-news-3-link"></a>
+                    </ul>
+                </div>
+            </card>
 
+        </div>
     </div>
     <br>
     <div class="footer">

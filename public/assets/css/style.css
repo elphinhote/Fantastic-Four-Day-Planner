@@ -1,28 +1,45 @@
 *{
     padding: 0px;
     margin:0px;
+    
+}
+
+body {
+    height: 1500px;
+    background-image: linear-gradient(red, yellow);
+    /* background-color: lightgrey; */
 }
 
 .jumbotron {
 color: white;
+padding: 15px;
 }
 
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+}
+
+.top {
+    margin: 15px;
+}
 .past-searches li{
     margin-left: 15px;
     /* list-style: none; */
     padding: 5px;
 }
 
-.stock-news ul li{
+/* .stock-news ul li{
     margin-left: 20px;
-    /* list-style: none; */
+
     padding: 5px;
-}
+} */
 
 .photo {
 height: 200px;
 width: 325px;
 display: block;
+margin-top: 10px;
 margin-left: auto;
 margin-right: auto;
 }
@@ -33,7 +50,7 @@ margin-right: auto;
 } */
 
 .news {
-margin-left: 5px;
+    margin: 15px;
 }
 
 .stock-news-list {
