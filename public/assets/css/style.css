@@ -16,6 +16,7 @@ body {
 .jumbotron {
 color: white;
 padding: 15px;
+font-family: 'Fraunces', serif;
 }
 
 /* Styling for the cards */
