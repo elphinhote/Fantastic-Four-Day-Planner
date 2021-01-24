@@ -1,7 +1,7 @@
 // Const for MySQL!
 const mysql = require("mysql");
 
-//JawsDB for Heroku
+// JawsDB for Heroku
 var connection;
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);

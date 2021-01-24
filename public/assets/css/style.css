@@ -1,40 +1,41 @@
+/* Styling for the whole page */
 *{
     padding: 0px;
     margin:0px;
     
 }
 
+/* body background styling the linear gradient red at top down to yellow */
 body {
     height: 1500px;
     background-image: linear-gradient(red, yellow);
     /* background-color: lightgrey; */
 }
 
+/* Jumbotron styling for the title of the page */
 .jumbotron {
 color: white;
 padding: 15px;
 }
 
+/* Styling for the cards */
 .card {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid black;
 }
 
+/* Top card styling */
 .top {
     margin: 15px;
 }
+/* Past stock searches list styling */
 .past-searches li{
     margin-left: 15px;
     /* list-style: none; */
     padding: 5px;
 }
 
-/* .stock-news ul li{
-    margin-left: 20px;
-
-    padding: 5px;
-} */
-
+/* Photos on the cards styling */
 .photo {
 height: 200px;
 width: 325px;
@@ -44,19 +45,17 @@ margin-left: auto;
 margin-right: auto;
 }
 
-/* #search{
-    text-align: center;
-    margin:10px 20px;
-} */
-
+/* news cards styling */
 .news {
     margin: 15px;
 }
 
+/* Stock News list styling */
 .stock-news-list {
     list-style: none;
 }
 
+/* Footer Styling */
 .footer {
     position: fixed;
     left: 0;
@@ -68,12 +67,15 @@ margin-right: auto;
     /* lightblue 173,216,230; */
 }
 
+/* Footer list styling for contacting */
 .footer li {
     list-style: none;
     display: inline;
     padding: 10px;
     color: grey
 }
+
+/* Footer list link styling */
 .footer li a {
     color: white;
 }

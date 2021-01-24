@@ -1,62 +1,47 @@
+// Required Consts
 const { QueryTypes, EmptyResultError } = require('sequelize');
 const db = require('../models');
 const Stock = require('../models/stocks.js');
 const axios = require("axios")
-// const moment = require("moment")
-
-// console.log(moment().format("MMM Do YY"))
-// const today = (moment().format("YYYY-MM-DD"))
-// console.log(today)
-
-
+// Luxon for the date to search todays news
 const { DateTime } = require("luxon");
+// Luxon
 dt = DateTime.local()
-// console.log(dt)
+// Variables for the date
 let yearLuxon = dt.c.year
 let monthLuxon = dt.c.month
 let dayLuxon = dt.c.day
+// Variable to format the date to be able to be searched by the API
 today = (`${yearLuxon}-${monthLuxon}-${dayLuxon}`)
-console.log(today)
+
 // dotenv const to hide API key
 const dotenv = require('dotenv').config()
 // Check for errors
 if (dotenv.error) {
     throw dotenv.error
 }
-// Set the .env data as a varible
-const apiKey = dotenv.parsed.apiKey
-
+// Set the .env data as a varible for the API Keys
+const stockApiKey = dotenv.parsed.stockApiKey
 const weatherApiKey = dotenv.parsed.weatherApiKey
-
 const newsApiKey = dotenv.parsed.newsApiKey
-console.log(newsApiKey)
-// console log the API key
-// console.log(apiKey)
 
+// Module.exports using sequelize for the app requests
 module.exports = (app) => {
+    // App.get to get all the stocks from the database
     app.get('/api/all', (req, res) => {
-
         db.Stocks.findAll({}).then((dbStocks) => {
             res.json(dbStocks);
-            // console.log(dbStocks)
         });
     });
 
-
+    // App.post for setting the newly searched Stock to the databse
     app.post("/api/new", (req, res) => {
-
         db.Stocks.create(req.body).then((dbStocks) => res.json(dbStocks))
-
     });
-
-
+    // App.put to search the stock API 
     app.put('/api/stockSearch', async (req, res) => {
-        const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${req.body.stock}&apikey=${apiKey}`;
-        // const stock = await axios.get(url);
-        // const data = stock.data
-        // console.log(stock.data)
-        // res.json(stock.data)
-
+        const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${req.body.stock}&apikey=${stockApiKey}`;
+        //Async and await
         try {
             const stock = await axios.get(url);
             res.json(stock.data);
@@ -65,14 +50,10 @@ module.exports = (app) => {
             res.status(500).send('Server Error - Whoops');
         }
     });
-
+    // App.put to search the news API for the stock searched for news from today
     app.put("/api/newsSearch", async (req, res) => {
-        // async (req, res) => {
-        // const newsUrl = "a818b4cc3056dff4bd880c03672ec7ed"
-        // http://newsapi.org/v2/everything?q=${req.body.search}&&sortBy=popularity&apiKey=${newsApiKey}
-        console.log(req.body.stock)
         const newsUrl = `http://newsapi.org/v2/everything?q=${req.body.stock}&from=${today}&sortBy=popularity&apiKey=${newsApiKey}`
-        // const newsReq = new Request(newsUrl);
+        //Async and await
         try {
             const news = await axios.get(newsUrl);
             res.json(news.data);
@@ -83,10 +64,10 @@ module.exports = (app) => {
 
     })
 
-
+    // App.get for searching the News API for todays news
     app.get("/api/todaysNews", async (req, res) => {
         // const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
-
+        //Async and await
         try {
             const todayNews = await axios.get(todaysNewsUrl);
             res.json(todayNews.data);
@@ -97,7 +78,7 @@ module.exports = (app) => {
 
     })
 
-
+    // App.delete to delete the searched stock from the database
     app.delete("/api/all/:id", (req, res) => {
         db.Stocks.destroy({
             where: {
@@ -106,30 +87,19 @@ module.exports = (app) => {
         }).then((dbStocks) => res.json(dbStocks));
     });
 
-
+    // App.get to get the todos from the database
     app.get('/api/allTodos', (req, res) => {
-
         db.Todos.findAll({}).then((dbTodos) => {
             res.json(dbTodos);
             console.log(dbTodos)
         });
     });
-
+    // App.post to add the new todo to the database
     app.post("/api/newTodo", (req, res) => {
-
         db.Todos.create(req.body).then((dbTodos) => res.json(dbTodos))
-
     });
 
-    // PUT route for updating posts
-    //   app.put('/api/posts', (req, res) => {
-    //     db.Post.update(req.body, {
-    //       where: {
-    //         id: req.body.id,
-    //       },
-    //     }).then((dbPost) => res.json(dbPost));
-    //   });
-
+    // App.delete to delete the a todo
     app.delete("/api/allTodos/:id", (req, res) => {
         db.Todos.destroy({
             where: {
@@ -138,41 +108,18 @@ module.exports = (app) => {
         }).then((dbTodos) => res.json(dbTodos));
     });
 
+    // App.put for updating the todo
     app.put("/api/allTodos/:id", (req, res) => {
-        console.log(req.params.id)
         db.Todos.update(
             { todo: req.body.todo },
             { where: { id: req.params.id } })
             .then((dbTodos) => res.json(dbTodos));
-
-
-
     });
 
-
-    //UPDATE TEST!
-    // app.put("/api/allTodos/:id", (req, res, cb) => {
-    //     Todos.update(
-    //         { todo: req.body.todo },
-    //         {
-    //             returning: true, where: {
-    //                 id: req.body.id,
-    //             },
-    //         }).then(function ([rowsUpdate, [updateTodo]]) {
-    //             res.json(updatedTodo)
-    //         })
-    //         .catch(cb)
-    // })
-
-
-
-    // });
-
-
+    // App.put to get the weather from the weather API
     app.put("/api/weather", async (req, res) => {
-        console.log(req.body.weather)
-        console.log("line136")
         const todaysWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${req.body.weather}&appid=${weatherApiKey}`
+        // Async and await
         try {
             const todaysWeather = await axios.get(todaysWeatherUrl);
             res.json(todaysWeather.data);
@@ -180,29 +127,6 @@ module.exports = (app) => {
             console.log(error.message);
             res.status(500).send('Server Error - Whoops');
         }
-
-
-
     })
 
 };
-
-
-        // const newsUrl = `'http://newsapi.org/v2/everything?' +
-        // 'q=Apple&' +
-        // 'from=2021-01-20&' +
-        // 'sortBy=popularity&' +
-        // 'apiKey=73a4ea5fd9c54d2c9fb5628642ce8864'`;
-        // const news = await axios.get(newsUrl);
-        // console.log(req.body)
-        // // const newsinfo = req.body
-        // console.log(news.data)
-
-
-        // try {
-        //     const news = await axios.get(newsUrl);
-        //     res.json(news.data);
-        // } catch (error) {
-        //     console.log(err.message);
-        //     res.status(500).send("news Api Whoops");
-        // }
