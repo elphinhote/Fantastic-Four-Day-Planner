@@ -66,7 +66,7 @@ module.exports = (app) => {
 
     // App.get for searching the News API for todays news
     app.get("/api/todaysNews", async (req, res) => {
-        // const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
+        const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
         //Async and await
         try {
             const todayNews = await axios.get(todaysNewsUrl);
