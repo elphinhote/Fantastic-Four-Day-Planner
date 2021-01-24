@@ -1,74 +1,82 @@
+/* Styling for the whole page */
 *{
     padding: 0px;
     margin:0px;
+    
 }
-/* body{
-    background-image: url("ll.jpg");
-} */
+
+/* body background styling the linear gradient red at top down to yellow */
+body {
+    height: 1500px;
+    background-image: linear-gradient(red, yellow);
+    /* background-color: lightgrey; */
+}
+
+/* Jumbotron styling for the title of the page */
 .jumbotron {
 color: white;
+padding: 15px;
+font-family: 'Fraunces', serif;
 }
 
-/* #card1{
-    position: relative;
-    padding-left: 620px;
-} */
+/* Styling for the cards */
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+}
 
-/* #space1{
-    width: 260px;
-} */
-/* #container1{
-    height: 200px;
-    width:55%;
-    margin: 0 auto;
-    float: none;
-    margin-bottom: 0px; */
-/* } */
-/* .table {
-    width: 30%;
-    margin-left: 6px;
-    border:0px;
-} */
+/* Top card styling */
+.top {
+    margin: 15px;
+}
+/* Past stock searches list styling */
+.past-searches li{
+    margin-left: 15px;
+    /* list-style: none; */
+    padding: 5px;
+}
+
+/* Photos on the cards styling */
+.photo {
+height: 200px;
+width: 325px;
+display: block;
+margin-top: 10px;
+margin-left: auto;
+margin-right: auto;
+}
+
+/* news cards styling */
+.news {
+    margin: 15px;
+}
+
+/* Stock News list styling */
+.stock-news-list {
+    list-style: none;
+}
+
+/* Footer Styling */
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color:lightblue;
+    background-color: rgba(240, 44, 40, 0.5);
     color: white;
     text-align: center;
+    /* lightblue 173,216,230; */
 }
 
-.past-searches li{
-    margin-left: 20px;
+/* Footer list styling for contacting */
+.footer li {
     list-style: none;
-    /* display: inline; */
-    background-color: black;
-    color: white;
-    padding: 5px;
+    display: inline;
+    padding: 10px;
+    color: grey
 }
 
-#weather-icon {
-height: 200px;
-width: 200px;
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 50%;
-}
-/* #cardw{
-    height: 250px;
-    width:55%;
-    margin: 0 auto;
-    float: none;
-    margin-bottom: 0px;
-    
-} */
-/* #weather{
-    padding: 15px 13px 15px 18px;
-   
-} */
-#search{
-    text-align: center;
-    margin:10px 20px;
+/* Footer list link styling */
+.footer li a {
+    color: white;
 }
