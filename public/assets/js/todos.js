@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         updateTodoRequest(updateTodoId)
 
                     })
-                    // Set the id for being able to delte the todo
+                    // Set the id for being able to delete the todo
                     let todoId = deleteTodo.setAttribute("id", id)
-                    // Event listener for the delte button
+                    // Event listener for the delete button
                     deleteTodo.addEventListener("click", (e) => {
                         // Target that attribute to delete
                         todoId = e.target.getAttribute("id")
