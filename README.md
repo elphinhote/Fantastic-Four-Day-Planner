@@ -1,7 +1,9 @@
 # Fantastic-Four-Stocks
 <h1> Introduction </h1>
 
-The project is designed for user who have a busy schedule and can just go on our app and see all the stuffs needed when they start their day. The app makes the user easy to read news, see what's going with their stock, see the weather and plan their day. For this project we have decided to work on various different sources.When the page loads you will see the top headlines and the user will be given an option to input on various resources i.e. :
+The project is designed for the user who has a busy schedule.  the user can go on our app and see all the stuff needed when they start their day. The news app lets the user easily read the news, while using a search query to know what's going on with their stocks.  The weather updates weather conditions to let the user plan their day. 
+
+For this project we decided to work from various different sources.  When the page loads you will see the top headlines and the user will be given an option to input from various resources i.e. :
 <ul>stock site</ul>
 <ul>weather site</ul>
 <ul>day planner</ul>
@@ -19,7 +21,7 @@ The project is designed for user who have a busy schedule and can just go on our
 <br>
 
 <h1> Weather app </h1>   
- The weather app is designed to search the current weather in user input city. When the user input the city name it will populate with temperature, location searched and with the slight information of weather. 
+ The weather app is designed with a search query the current weather in user input with a city. When the user input the city name it will populate with temperature, location searched and with the slight information of weather. 
  <br>
  <br>
  <h1> Stock app </h1>
