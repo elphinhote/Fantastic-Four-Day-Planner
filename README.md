@@ -1,9 +1,9 @@
 # Fantastic-Four-Stocks
 <h1> Introduction </h1>
-T
-The project is designed for the user who has a busy schedule.  The user can go to our app and see all the stuff needed when they start their day. The news app lets the user easily read the news, while using a search query to find what's going on with their stocks and the weather updates weather conditions to let the user plan their day. 
 
-For this project we decided to work from various different sources.  When the page loads you will see the top headlines and the user will be given an option to input from various resources i.e. :
+The project is designed for the user who has a busy schedule.  The user can go to our app and see all the stuff needed when they start their day. The news app lets the user easily read the news, while using a search query to find what'sg oing on with their stocks and the weather app for weather conditions to let the users plan their day. 
+
+For this project we worked from various different sources.  When the page loads you will see the top headlines and the user will be given an option to input from the app resources i.e. :
 <ul>stock site</ul>
 <ul>weather site</ul>
 <ul>day planner</ul>
@@ -17,15 +17,18 @@ For this project we decided to work from various different sources.  When the pa
    <li> moment </li>
     <li> mysql2 </li>
     <li> sequelize</li>
+    <li> heroku </li>
+    <li> sweetalert.js </li>
+    
 
 <br>
 
 <h1> Weather app </h1>   
- The weather app is designed with a search query the current weather in user input with a city. When the user input the city name it will populate with temperature, location searched and with the slight information of weather. 
+ The weather app is designed with a search query for weather conditions with user input. When the user inputs the city name it will populate with the temperature, location searched and related information of the weather. 
  <br>
  <br>
  <h1> Stock app </h1>
-  The stock app is focused on the price of the user input stock name. The user have to input the symbol for the stock and it will guide through the price and description of the stock. After the user input the stock symbol it will pop up with price and there will be a option for the user to read more news about the entered stock.
+  The stock app is focused on the price of the user input by stock name. The user had to input the symbol for the stock, and the result will be the price and description of the stock. After the user input the stock symbol, will pop up with the price and there will be a option for the user to read more about the stock with related news snippabout the entered stock.
 
  <br>
  <br>
@@ -36,7 +39,7 @@ The todo app is designed to plan the user day. Once they have opened the app the
 <br>
 <br>
 <h1>Footer</h1>
-  In the footer We have included the contact details of our team members. When the user click on the team-members github links it will open the user github respitory and can contribute to the project.
+  In the footer We have included contact details of our team members. When the user clicks on the team-member's github link, it will open the user github repository and can contribute to the project.
 <br>
 <br>
 <h1> Team-members </h1>
@@ -58,7 +61,10 @@ The todo app is designed to plan the user day. Once they have opened the app the
 
  ![image](https://user-images.githubusercontent.com/71658001/105621615-5370c180-5dbe-11eb-91d4-6497c260b4d1.png)
 
-Presentation:
+<h1>Presentation</h1>
+
+
+
 https://docs.google.com/presentation/d/e/2PACX-1vSpHGu8e97n7U775lUNa0ftebLjsKhtH79OFQtRMZybBZVF5uSpH-dQ_4InOZEK3YOCiAz6Ulj5V_Jm/pub?start=true&loop=false&delayms=3000
 
 
