@@ -34,7 +34,7 @@ For this project we worked from various different sources.  When the page loads 
  <br>
 
  <h1> TO-DO </h1>
-The todo app is designed to plan the user day. Once they have opened the app they can add,remove and update the todo list.once the user has input the plan they can delete it and add a new day plan and also update that same stuff again.
+The todo app is designed to plan the user's day. Once they have opened the app they can add,remove and update the todo list.  Once the user has input the todo they can delete it and add a new day plan and also update the same stuff again.
 
 <br>
 <br>
@@ -63,8 +63,8 @@ The todo app is designed to plan the user day. Once they have opened the app the
 
 <h1>Presentation</h1>
 
-
-
 https://docs.google.com/presentation/d/e/2PACX-1vSpHGu8e97n7U775lUNa0ftebLjsKhtH79OFQtRMZybBZVF5uSpH-dQ_4InOZEK3YOCiAz6Ulj5V_Jm/pub?start=true&loop=false&delayms=3000
+
+
 
 
