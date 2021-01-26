@@ -34,16 +34,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     // Create the delete to do button
                     let deleteTodo = document.createElement("button");
                     // Add the class
-                    deleteTodo.classList.add("delete-todo");
+                    deleteTodo.classList.add("delete-todo", "btn", "btn-sm", "btn-outline-danger");
                     // Set it to say delete
                     deleteTodo.textContent = "Delete"
 
                     // Create the update todo button
                     let updateTodo = document.createElement("button");
                     // Set it to say update
-                    updateTodo.textContent = "update"
+                    updateTodo.textContent = "Update"
                     // add the class
-                    updateTodo.classList.add("updateTodo");
+                    updateTodo.classList.add("updateTodo", "btn", "btn-sm", "btn-outline-info");
                     // set the id for being able to update todo
                     let updateTodoId = updateTodo.setAttribute("id", id)
                     // Event listener for the update button

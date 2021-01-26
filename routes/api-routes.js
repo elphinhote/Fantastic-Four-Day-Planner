@@ -52,7 +52,7 @@ module.exports = (app) => {
     });
     // App.put to search the news API for the stock searched for news from today
     app.put("/api/newsSearch", async (req, res) => {
-        const newsUrl = `http://newsapi.org/v2/everything?q=${req.body.stock}&from=${today}&sortBy=popularity&apiKey=${newsApiKey}`
+        // const newsUrl = `http://newsapi.org/v2/everything?q=${req.body.stock}&from=${today}&sortBy=popularity&apiKey=${newsApiKey}`
         //Async and await
         try {
             const news = await axios.get(newsUrl);
@@ -66,7 +66,7 @@ module.exports = (app) => {
 
     // App.get for searching the News API for todays news
     app.get("/api/todaysNews", async (req, res) => {
-        const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
+        // const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
         //Async and await
         try {
             const todayNews = await axios.get(todaysNewsUrl);
