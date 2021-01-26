@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     // Create the delete buttons
                     let deleteButton = document.createElement("button");
                     // Add the class to the delete buttons
-                    deleteButton.classList.add("delete-stock")
+                    deleteButton.classList.add("delete-stock", "btn", "btn-sm", "btn-outline-danger")
                     // Label the button
                     deleteButton.textContent = "Delete"
 
