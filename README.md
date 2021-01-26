@@ -62,6 +62,7 @@ The todo app is designed to plan the user's day. Once they have opened the app t
  ![image](https://user-images.githubusercontent.com/71658001/105621615-5370c180-5dbe-11eb-91d4-6497c260b4d1.png)
 
 <h1>Presentation</h1>
+![FL9owS](https://user-images.githubusercontent.com/65749636/105821759-0df3f600-5f70-11eb-9ac7-071ec8135c20.jpg)
 
 https://docs.google.com/presentation/d/e/2PACX-1vSpHGu8e97n7U775lUNa0ftebLjsKhtH79OFQtRMZybBZVF5uSpH-dQ_4InOZEK3YOCiAz6Ulj5V_Jm/pub?start=true&loop=false&delayms=3000
 
