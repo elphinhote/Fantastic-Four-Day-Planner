@@ -5,7 +5,7 @@ const day = (moment().format("MMM Do YYYY"))
 // Const to get the location
 const todaysDate = document.querySelector("#todays-date")
 // Set the contents for the title of the page to display the date
-todaysDate.textContent = (`For: ${day}`)
+todaysDate.textContent = (day)
 
 // consts for selecting the news lists on the HTML
 const todaysNewsTitle1 = document.querySelector("#todays-news-1-title")

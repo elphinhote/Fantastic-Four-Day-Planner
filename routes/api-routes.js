@@ -52,7 +52,7 @@ module.exports = (app) => {
     });
     // App.put to search the news API for the stock searched for news from today
     app.put("/api/newsSearch", async (req, res) => {
-        // const newsUrl = `http://newsapi.org/v2/everything?q=${req.body.stock}&from=${today}&sortBy=popularity&apiKey=${newsApiKey}`
+        const newsUrl = `http://newsapi.org/v2/everything?q=${req.body.stock}&from=${today}&sortBy=popularity&apiKey=${newsApiKey}`
         //Async and await
         try {
             const news = await axios.get(newsUrl);
@@ -66,7 +66,7 @@ module.exports = (app) => {
 
     // App.get for searching the News API for todays news
     app.get("/api/todaysNews", async (req, res) => {
-        // const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
+        const todaysNewsUrl = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`
         //Async and await
         try {
             const todayNews = await axios.get(todaysNewsUrl);
@@ -115,6 +115,25 @@ module.exports = (app) => {
             { where: { id: req.params.id } })
             .then((dbTodos) => res.json(dbTodos));
     });
+
+
+    // BEGIN Test for getting location data from the browser
+    // App.put to get the weather for the current location of the user.
+    // app.put("/api/location", async (req, res) => {
+    //     const locationWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?${req.body.weather}&appid=${weatherApiKey}`
+    //     // Async and await
+    //     try {
+    //         const locationWeather = await axios.get(locationWeatherUrl);
+    //         res.json(locationWeather.data);
+    //         console.log(locationWeather.data)
+
+    //     } catch (error) {
+    //         console.log(error.message);
+    //         res.status(500).send('Server Error - Whoops');
+    //     }
+    // })
+    // END Test for getting location data from the browser
+
 
     // App.put to get the weather from the weather API
     app.put("/api/weather", async (req, res) => {
