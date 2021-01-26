@@ -24,6 +24,9 @@ font-family: 'Fraunces', serif;
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid black;
 }
+.card-text {
+    font-size: 11px;
+}
 
 /* Top card styling */
 .top {
