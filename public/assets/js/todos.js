@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // Json the data
             .then((addTodo) => addTodo.json())
             .then((data) => {
-                console.log('Success in adding todo:', data);
                 // console.log(`Todo added: ${addTodo.todo}`);
                 newTodoInput.value = ""
                 // Call the get todo function
@@ -150,7 +149,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             .then((results) => results.json())
             // console log the data and reset the value
             .then((data) => {
-                console.log('Success in updating:', data);
+                // console.log('Success in updating:', data);
                 // console.log(`Todo added: ${addTodo.todo}`);
                 newTodoInput.value = ""
                 // todoList.textContent = ""

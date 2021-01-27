@@ -104,9 +104,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             // Get the data
             .then((data) => {
-                // Console log it
-                console.log(data)
-                console.log(`Stock added: ${newStock.stock}`);
+                // Call the get stocks function
                 getStocks()
             })
             // Catching all them errors!
