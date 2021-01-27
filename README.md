@@ -1,4 +1,4 @@
-# Fantastic-Four-Day Planner
+# Fantastic-Four-Stocks
 <h1> Introduction </h1>
 
 The project is designed for the user who has a busy schedule.  The user can go to our app and see all the stuff needed when they start their day. The news app lets the user easily read the news, while using a search query to find what'sg oing on with their stocks and the weather app for weather conditions to let the users plan their day. 
