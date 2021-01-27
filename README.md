@@ -63,4 +63,13 @@ The todo app is designed to plan the user day. Once they have opened the app the
 
 ![Fantastic-Four Day Planner-1](https://user-images.githubusercontent.com/68625400/105917573-58648980-5fe7-11eb-8060-6955c239934e.png)
 
+<h1>Presentation</h1>
+
+
+![FL9owS (2)](https://user-images.githubusercontent.com/65749636/105822718-3d573280-5f71-11eb-8183-062e75cc5c97.gif)
+
+<br>
+
+
+https://docs.google.com/presentation/d/e/2PACX-1vSpHGu8e97n7U775lUNa0ftebLjsKhtH79OFQtRMZybBZVF5uSpH-dQ_4InOZEK3YOCiAz6Ulj5V_Jm/pub?start=true&loop=false&delayms=3000
 
