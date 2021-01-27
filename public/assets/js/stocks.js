@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     // get the DOM for the stock news title
                     const stockNewsTitle = document.querySelector("#stock-news-title")
                     // Set the text content
-                    stockNewsTitle.textContent = `${newStock.stock} Stock News`
+                    stockNewsTitle.textContent = `$${newStock.stock} Stock News`
                     // Consts for the stock news lists
                     const stockNews1 = document.querySelector("#stock-news-1-title")
                     const stockLink1 = document.querySelector("#stock-news-1-link")

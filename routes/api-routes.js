@@ -52,7 +52,7 @@ module.exports = (app) => {
     });
     // App.put to search the news API for the stock searched for news from today
     app.put("/api/newsSearch", async (req, res) => {
-        const newsUrl = `http://newsapi.org/v2/everything?sources=marketwatch&q=$${req.body.stock}&from=${today}&sortBy=popularity&apiKey=${newsApiKey}`
+        const newsUrl = `http://newsapi.org/v2/everything?q=$${req.body.stock}&from=${today}&sortBy=popularity&apiKey=${newsApiKey}`
         //Async and await
         try {
             const news = await axios.get(newsUrl);
