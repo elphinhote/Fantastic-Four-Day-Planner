@@ -1,7 +1,12 @@
 # Fantastic-Four-Stocks
+
+https://secret-escarpment-97413.herokuapp.com/
+
+<img src="https://img.shields.io/badge/LICENSE-mit-green"/>
+
 <h1> Introduction </h1>
 
-The project is designed for user who have a busy schedule and can just go on our app and see all the stuffs needed when they start their day. The app makes the user easy to read news, see what's going with their stock, see the weather and plan their day. For this project we have decided to work on various different sources.When the page loads you will see the top headlines and the user will be given an option to input on various resources i.e. :
+The project is designed for user who have a busy schedule and can just go on our app and see all the stuff needed when they start their day. The app makes the user easy to read news, see what's going with their stock, see the weather and plan their day. For this project we have decided to work on various different sources. When the page loads you will see the top headlines and the user will be given an option to input on various resources i.e. :
 <ul>stock site</ul>
 <ul>weather site</ul>
 <ul>day planner</ul>
@@ -9,12 +14,20 @@ The project is designed for user who have a busy schedule and can just go on our
 
 
 <h1> Technology Used </h1>
-    <li> axios</li>
-   <li> dotenv</li>
-   <li> express </li>
-   <li> moment </li>
-    <li> mysql2 </li>
-    <li> sequelize</li>
+    <li>JavaScript</li>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Bootstrap</li>
+    <li>Api Requests</li>
+    <li>Moments.js</li>
+    <li>Luxon</li>
+    <li>Cloudinary</li>
+    <li>Axios</li>
+    <li>Dotenv</li>
+    <li>Express</li>
+    <li>Moments.js</li>
+    <li>Mysql2</li>
+    <li>Sequelize</li>
 
 <br>
 
@@ -23,19 +36,19 @@ The project is designed for user who have a busy schedule and can just go on our
  <br>
  <br>
  <h1> Stock app </h1>
-  The stock app is focused on the price of the user input stock name. The user have to input the symbol for the stock and it will guide through the price and description of the stock. After the user input the stock symbol it will pop up with price and there will be a option for the user to read more news about the entered stock.
+  The stock app is focused on the price of the user input stock name. The user have to input the symbol for the stock and it will display the name and price of the stock. The user can also click on the "Get News for this stock" button to see the latest news about the stock searched from Marketwatch.com  The stock searched is then displayed under the search bar, and saved into the Mysql Database.  With the option to delete the stock from the database if desired.
 
  <br>
  <br>
 
  <h1> TO-DO </h1>
-The todo app is designed to plan the user day. Once they have opened the app they can add,remove and update the todo list.once the user has input the plan they can delete it and add a new day plan and also update that same stuff again.
+The todo app is designed to plan the user day. Once they have opened the app they can add,remove and update the todo list.once the user has input the plan they can delete it and add a new day plan and also update the todo if needed. (updating is done by typing in the same input box and then hitting the edit button coresponding to the todo they would like to update.
 
 <br>
 <br>
 <h1>Footer</h1>
   In the footer We have included the contact details of our team members. When the user click on the team-members github links it will open the user github respitory and can contribute to the project.
-<br>
+<br>DMJ
 <br>
 <h1> Team-members </h1>
  <li>Sean Melody</li>
@@ -43,17 +56,11 @@ The todo app is designed to plan the user day. Once they have opened the app the
  <li>Sudan Bhusal </li>
  <br>
  <br>
- <h1>Resources used: </h1>
- <li>HTML</li>
- <li>CSS</li>
- <li>JS</li>
- <li>Web Api</li>
- <li>Schema</li>
 
  <br>
  <br>
  <h1>Here is how it looks like: </h1>
 
- ![image](https://user-images.githubusercontent.com/71658001/105621615-5370c180-5dbe-11eb-91d4-6497c260b4d1.png)
+![Fantastic-Four Day Planner-1](https://user-images.githubusercontent.com/68625400/105917573-58648980-5fe7-11eb-8060-6955c239934e.png)
 
 
