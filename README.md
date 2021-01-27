@@ -62,6 +62,8 @@ The todo app is designed to plan the user day. Once they have opened the app the
  <h1>Here is how it looks like: </h1>
 
 ![Fantastic-Four Day Planner-1](https://user-images.githubusercontent.com/68625400/105917573-58648980-5fe7-11eb-8060-6955c239934e.png)
+![Fantastic-Four Day Planner-2](https://user-images.githubusercontent.com/68625400/105948464-d2b10000-601f-11eb-9d03-a204c26ba374.png)
+
 
 <h1>Walkthrough Gif</h1>
 
