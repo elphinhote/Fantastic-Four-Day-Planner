@@ -7,7 +7,7 @@
 
 /* body background styling the linear gradient red at top down to yellow */
 body {
-    height: 1500px;
+    height: 1800px;
     background-image: linear-gradient(red, yellow);
     /* background-color: lightgrey; */
 }
@@ -25,7 +25,7 @@ font-family: 'Fraunces', serif;
     border: 1px solid black;
 }
 .card-text {
-    font-size: 14px;
+    font-size: 15px;
 }
 
 /* Top card styling */
